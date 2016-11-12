@@ -1,6 +1,6 @@
-jew_claw_lua = class({})
+jew_claw = class({})
 
-function jew_claw_lua:OnSpellStart()
+function jew_claw:OnSpellStart()
 
 	caster = self:GetCaster()
 	target = self:GetCursorTarget()

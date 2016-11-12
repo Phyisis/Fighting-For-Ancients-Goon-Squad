@@ -19,9 +19,9 @@
 		//"AttributeBaseAgility"		"27"	
 		"AttributeAgilityGain"		"1.2"
 
-		"Ability1"					"gaggle_of_jews_lua"
-		"Ability2"					"jew_claw_lua"
-		"Ability3"					"misanthrope_lua"
-		"Ability4"					"wallet_drain_lua"
+		"Ability1"					"gaggle_of_jews"
+		"Ability2"					"jew_claw"
+		"Ability3"					"misanthrope"
+		"Ability4"					"wallet_drain"
 	}
 }

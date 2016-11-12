@@ -1,5 +1,7 @@
 -- Generated from template
 
+require('libraries/timers')
+
 if FAGSDota == nil then
 	FAGSDota = class({})
 end
@@ -21,12 +23,10 @@ function Activate()
 end
 
 function FAGSDota:InitGameMode()
-	print( "Template addon is loaded." )
-	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )
+	print("Template addon is loaded.")
+	GameRules:GetGameModeEntity():SetThink("OnThink", self, "GlobalThink", 2)
 
-	ListenToGameEvent( "player_chat", Dynamic_Wrap( FAGSDota, 'OnChat' ), self )
-
-
+	ListenToGameEvent( "player_chat", Dynamic_Wrap(FAGSDota, 'OnChat'), self)
 end
 
 -- Evaluate the state of the game
@@ -46,24 +46,54 @@ function FAGSDota:OnChat(event)
 	if event.text == 'debug' then
 		self:EzDebug()
 	end
+	if event.text == 'reload' then
+		self:ReloadScripts()
+	end
+	if event.text == 'launch' then
+		self:Launch()
+	end
+end
+
+function FAGSDota:Launch()
+	SendToServerConsole("dota_launch_custom_game fags dota")
+end
+
+function FAGSDota:ReloadScripts()
+
+	SendToServerConsole("script_reload")
+	SendToServerConsole("cl_script_reload")
+
 end
 
 function FAGSDota:EzDebug()
-	SendToConsole("lvlup 25")
-	SendToConsole("item travel 2; item heart; item butter; item skadi")
+	SendToServerConsole("dota_dev hero_level 25")
+
+	SendToServerConsole("dota_create_item travel 2")
+	SendToServerConsole("dota_create_item rapier")
+	SendToServerConsole("dota_create_item rapier")
+	SendToServerConsole("dota_create_item rapier")
+	SendToServerConsole("dota_create_item heart")
+	SendToServerConsole("dota_create_item manta")
+
+	SendToServerConsole("dota_dev hero_teleport")
+
+	SendToServerConsole("dota_spawn_creeps")
+	SendToServerConsole("dota_spawn_neutrals")
 end
 
 
 function FAGSDota:EnableBots()
 
 	SendToServerConsole("sv_cheats 1; dota_bot_populate")
-	GameRules:GetGameModeEntity():SetBotsAlwaysPushWithHuman( false )
-	GameRules:GetGameModeEntity():SetBotsInLateGame( false )
-	GameRules:GetGameModeEntity():SetBotsMaxPushTier( 4 )
-	GameRules:GetGameModeEntity():SetBotThinkingEnabled( true )
+	GameRules:GetGameModeEntity():SetBotsAlwaysPushWithHuman(false)
+	GameRules:GetGameModeEntity():SetBotsInLateGame(false)
+	GameRules:GetGameModeEntity():SetBotsMaxPushTier(4)
+	GameRules:GetGameModeEntity():SetBotThinkingEnabled(true)
 
-	for _, hero in pairs( HeroList:GetAllHeroes() ) do
-		hero:SetBotDifficulty(4)
-	end
+	Timers:CreateTimer(2, function()
+		for _, hero in pairs(HeroList:GetAllHeroes()) do
+			hero:SetBotDifficulty(4)
+		end
+	end)
 
 end

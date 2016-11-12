@@ -1,6 +1,6 @@
-gaggle_of_jews_lua = class({})
+gaggle_of_jews = class({})
 
-function gaggle_of_jews_lua:OnSpellStart()
+function gaggle_of_jews:OnSpellStart()
 
 	local caster = self:GetCaster()
 	local player = caster:GetPlayerID()

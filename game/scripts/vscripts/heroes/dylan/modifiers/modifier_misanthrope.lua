@@ -1,13 +1,13 @@
-modifier_misanthrope_lua = class({})
+modifier_misanthrope = class({})
 
 
-function modifier_misanthrope_lua:OnCreated()
+function modifier_misanthrope:OnCreated()
 	if IsServer() then
 		print("CREATED")
 	end
 end
 
-function modifier_misanthrope_lua:OnDeath(params)
+function modifier_misanthrope:OnDeath(params)
 
 	if IsServer() then
 
@@ -81,7 +81,7 @@ function modifier_misanthrope_lua:OnDeath(params)
 end
 
 
-function modifier_misanthrope_lua:DeclareFunctions()
+function modifier_misanthrope:DeclareFunctions()
 	
 	local funcs = {
 		MODIFIER_EVENT_ON_DEATH

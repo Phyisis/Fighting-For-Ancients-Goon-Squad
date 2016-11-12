@@ -1,32 +1,32 @@
-wallet_drain_lua = class({})
+wallet_drain = class({})
 
-LinkLuaModifier("modifier_wallet_drain_lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_wallet_drain", "heroes/dylan/modifiers/modifier_wallet_drain.lua", LUA_MODIFIER_MOTION_NONE)
 
-function wallet_drain_lua:OnSpellStart()
+function wallet_drain:OnSpellStart()
 
 	local caster = self:GetCaster()
 
 	time = self:GetSpecialValueFor("duration")
 
-	caster:AddNewModifier(caster, self, "modifier_wallet_drain_lua", { duration = time })
+	caster:AddNewModifier(caster, self, "modifier_wallet_drain", { duration = time })
 	
 end
 
-function wallet_drain_lua:OnChannelInterrupted()
+function wallet_drain:OnChannelInterrupted()
 
 	local caster = self:GetCaster()
-	caster:RemoveModifierByName("modifier_wallet_drain_lua")
+	caster:RemoveModifierByName("modifier_wallet_drain")
 
 end
 
-function wallet_drain_lua:OnChannelFinish()
+function wallet_drain:OnChannelFinish()
 
 	local caster = self:GetCaster()
-	caster:RemoveModifierByName("modifier_wallet_drain_lua")
+	caster:RemoveModifierByName("modifier_wallet_drain")
 
 end
 
-function wallet_drain_lua:CastFilterResultTarget(hTarget)
+function wallet_drain:CastFilterResultTarget(hTarget)
 
 	if self:GetCaster() == hTarget then
 		return UF_FAIL_CUSTOM
@@ -46,7 +46,7 @@ function wallet_drain_lua:CastFilterResultTarget(hTarget)
 
 end
 
-function wallet_drain_lua:GetCustomCastErrorTarget(hTarget)
+function wallet_drain:GetCustomCastErrorTarget(hTarget)
 	if self:GetCaster() == hTarget then
 		return "#dota_hud_error_cant_cast_on_self"
 	end

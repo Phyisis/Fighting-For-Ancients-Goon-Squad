@@ -3,10 +3,10 @@
 {
 	"Version"		"1"
 
-	"gaggle_of_jews_lua"
+	"gaggle_of_jews"
 	{
 		"BaseClass"				"ability_lua"
-		"ScriptFile"			"gaggle_of_jews_lua"
+		"ScriptFile"			"heroes/dylan/gaggle_of_jews.lua"
 		"AbilityTextureName" 	"gaggle_of_jews"
 
 		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -54,10 +54,10 @@
 		}
 	}
 
-	"jew_claw_lua"
+	"jew_claw"
 	{
 		"BaseClass"				"ability_lua"
-		"ScriptFile"			"jew_claw_lua"
+		"ScriptFile"			"heroes/dylan/jew_claw.lua"
 		"AbilityTextureName" 	"jew_claw"
 
 		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
@@ -90,10 +90,10 @@
 		}
 	}
 
-	"misanthrope_lua"
+	"misanthrope"
 	{
 		"BaseClass"				"ability_lua"
-		"ScriptFile"			"misanthrope_lua"
+		"ScriptFile"			"heroes/dylan/misanthrope.lua"
 		"AbilityTextureName" 	"misanthrope"
 
 		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -120,10 +120,10 @@
 		}
 	}
 
-	"wallet_drain_lua"
+	"wallet_drain"
 	{
 		"BaseClass"				"ability_lua"
-		"ScriptFile"			"wallet_drain_lua"
+		"ScriptFile"			"heroes/dylan/wallet_drain.lua"
 		"AbilityTextureName" 	"wallet_drain"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
@@ -144,7 +144,6 @@
 
 		"precache"
 		{
-			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_lion.vsndevts"
 			"particle"			"particles/units/heroes/hero_lion/lion_spell_mana_drain.vpcf"
 		}
 	

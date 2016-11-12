@@ -1,20 +1,20 @@
-modifier_wallet_drain_lua = class({})
+modifier_wallet_drain = class({})
 
-if IsServer() then
+function modifier_wallet_drain:OnCreated()
 
-	function modifier_wallet_drain_lua:OnCreated()
-
+	if IsServer() then
 		--self:GetParent():Interrupt()
 		self:StartIntervalThink(0.25)
 		self:OnIntervalThink()
-		ability = self:GetAbility()
 		target = ability:GetCursorTarget()
-
 		StartSoundEvent("Hero_Lion.ManaDrain", target)
-
 	end
 
-	function modifier_wallet_drain_lua:OnIntervalThink()
+end
+
+function modifier_wallet_drain:OnIntervalThink()
+
+	if IsServer() then
 		
 		ability = self:GetAbility()
 		caster = self:GetCaster()
@@ -68,20 +68,18 @@ if IsServer() then
 
 	end
 
-	function modifier_wallet_drain_lua:OnDestroy()
+end
 
+function modifier_wallet_drain:OnDestroy()
+
+	if IsServer() then
 		ability = self:GetAbility()
 		target = ability:GetCursorTarget()
 		StopSoundEvent("Hero_Lion.ManaDrain", target)
-
 	end
-
 
 end
 
-function modifier_wallet_drain_lua:DeclareFunctions()
-	
-	local funcs = {}
-
-	return funcs
+function modifier_wallet_drain:DeclareFunctions()
+	return {}
 end
