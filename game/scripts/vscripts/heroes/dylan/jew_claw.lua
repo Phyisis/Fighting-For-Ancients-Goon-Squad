@@ -11,7 +11,8 @@ function jew_claw:OnSpellStart()
 	ParticleManager:SetParticleControlEnt(midas_particle, 1, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), false)
 
 	gold = self:GetSpecialValueFor("gold_bonus")
-	xp = self:GetSpecialValueFor("xp_bonus")
+	--xp = self:GetSpecialValueFor("xp_bonus")
+	xp = 500
 
 	target:SetDeathXP(math.floor(target:GetDeathXP() * xp))
 	target:SetMinimumGoldBounty(gold)
