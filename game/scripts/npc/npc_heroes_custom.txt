@@ -36,16 +36,23 @@
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityLayout"				"4"
+
 		"Ability1"					"ernest_int1"
 		"Ability2"					"ernest_int2"
 		"Ability3"					"ernest_int3"
 		"Ability4"					"ernest_swap"
-		"Ability5"					"ernest_agi1"
-		"Ability6"					"ernest_agi2"
-		"Ability7"					"ernest_agi3"
-		"Ability8"					"ernest_str1"
-		"Ability9"					"ernest_str2"
-		"Ability10"					"ernest_str3"
+		"Ability5"					""
+		"Ability6"					""
+		"Ability7"					""
+		"Ability8"					""
+		"Ability9"					""
+		"Ability10"					""
+		"Ability11"					""
+		"Ability12"					""
+		"Ability13"					""
+		"Ability14"					""
+		"Ability15"					""
+		"Ability16"					""
 		
 		
 

@@ -16,3 +16,4 @@ function ernest_int2:OnSpellStart()
 	end)
 	
 end
+

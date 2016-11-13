@@ -3,7 +3,6 @@
 {
 	"Version"		"1"
 	
-	
 	//=================================================================================================================
 	// DYLAN
 	//=================================================================================================================
@@ -189,15 +188,48 @@
 	//=================================================================================================================
 	// ERNEST
 	//=================================================================================================================
-	
-	"ernest_int1" //
+	"ernest_swap"
 	{
-		"AbilityTextureName" 	"ernest_int1"	
-	}
-	"ernest_int2" //global acid rain
-	{
-		"AbilityTextureName" 	"ernest_int2"
 		"BaseClass"				"ability_lua"
+		"ScriptFile"			"heroes/invoker/ernest_swap.lua"
+		"AbilityTextureName" 	"invoke"
+		
+		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0.0"
+		
+		"AbilitySpecial"
+		{ 
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"flat_bonus"		"5 10 15"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"primary_bonus"		"15 30 45"
+			}
+		}
+	}
+
+	"ernest_int1"
+	{
+		"BaseClass"				"ability_lua"
+		"AbilityTextureName" 	"ernest_int1"
+		"ScriptFile"			"heroes/invoker/ernest_int1.lua"
+		"AbilityTextureName" 	"ernest_agi1"
+
+		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0.0"
+	}
+
+	"ernest_int2" //global acid rain
+	{		
+		"BaseClass"				"ability_lua"
+		"AbilityTextureName" 	"ernest_int2"
 		"ScriptFile"			"heroes/invoker/ernest_int2.lua"
 		
 		
@@ -231,58 +263,82 @@
 		}
 	
 	}
+
 	"ernest_int3"
 	{
-		"AbilityTextureName" 	"ernest_int3"	
-	}
-	"ernest_swap"
-	{
 		"BaseClass"				"ability_lua"
-		"ScriptFile"			"heroes/invoker/ernest_swap.lua"
-		"AbilityTextureName" 	"ernest_swap"
-		
+		"AbilityTextureName" 	"ernest_int3"
+		"ScriptFile"			"heroes/invoker/ernest_int3.lua"
 		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"0.0"
-		
-		"AbilitySpecial"
-		{ 
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"flat_bonus"		"5 10 15"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"primary_bonus"		"15 30 45"
-			}
-		}
 	}
+
 	"ernest_agi1"
 	{
+		"BaseClass"				"ability_lua"
 		"AbilityTextureName" 	"ernest_agi1"	
+		"ScriptFile"			"heroes/invoker/ernest_agi1.lua"
+		"AbilityTextureName" 	"ernest_agi1"
+
+		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0.0"
 	}
 	"ernest_agi2"
 	{
-		"AbilityTextureName" 	"ernest_agi2"	
+		"BaseClass"				"ability_lua"
+		"AbilityTextureName" 	"ernest_agi2"
+		"ScriptFile"			"heroes/invoker/ernest_agi2.lua"
+		"AbilityTextureName" 	"ernest_agi1"
+
+		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0.0"
 	}
 	"ernest_agi3" 
 	{
-		"AbilityTextureName" 	"ernest_agi3"	
+		"BaseClass"				"ability_lua"
+		"AbilityTextureName" 	"ernest_agi3"
+		"ScriptFile"			"heroes/invoker/ernest_agi3.lua"
+		"AbilityTextureName" 	"ernest_agi1"
+
+		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0.0"
 	}
 	"ernest_str1" // aoe stun
 	{
+		"BaseClass"				"ability_lua"
 		"AbilityTextureName" 	"ernest_str1"	
+		"ScriptFile"			"heroes/invoker/ernest_str1.lua"
+		"AbilityTextureName" 	"ernest_agi1"
+
+		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0.0"
 	}
 	"ernest_str2"
 	{
+		"BaseClass"				"ability_lua"
 		"AbilityTextureName" 	"ernest_str2"
+		"ScriptFile"			"heroes/invoker/ernest_str2.lua"
+		"AbilityTextureName" 	"ernest_agi1"
+
+		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0.0"
 	
 	}
 	"ernest_str3" 
 	{
-		"AbilityTextureName" 	"ernest_str3"	
+		"BaseClass"				"ability_lua"
+		"AbilityTextureName" 	"ernest_str3"
+		"ScriptFile"			"heroes/invoker/ernest_str3.lua"
+		"AbilityTextureName" 	"ernest_agi1"
+
+		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0.0"	
 	}
 }

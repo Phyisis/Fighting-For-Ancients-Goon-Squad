@@ -1,0 +1,1 @@
+ernest_int3 = class({})
