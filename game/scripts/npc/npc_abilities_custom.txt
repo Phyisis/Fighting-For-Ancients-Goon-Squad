@@ -238,17 +238,22 @@
 		"AbilityCooldown"				"60.0"
 		"AbilityManaCost"				"100.0 110.0 120.0 130.0"
 		
+		"precache"
+		{
+			"particle"			"particles/invoker/acid_rain.vpcf"
+		}
+		
 		"AbilitySpecial"
 		{ 
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"flat_damage"		"5 10 15 20"
+				"flat_damage"		"5"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"percent_damage"	"0.25 0.5 0.75 1"
+				"percent_damage"	"1"
 			}
 			"03"
 			{
