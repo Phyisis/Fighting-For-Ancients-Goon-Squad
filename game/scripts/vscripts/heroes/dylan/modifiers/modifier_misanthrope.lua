@@ -4,7 +4,13 @@ modifier_misanthrope = class({})
 function modifier_misanthrope:OnCreated()
 	if IsServer() then
 		print("CREATED")
+		hero = self:GetParent()
+		print(hero:GetAbsOrigin())
 	end
+end
+
+function modifier_misanthrope:IsPurgable()
+	return false
 end
 
 function modifier_misanthrope:OnDeath(params)
@@ -14,44 +20,37 @@ function modifier_misanthrope:OnDeath(params)
 		target = params.unit
 		caster = self:GetParent()
 		player = PlayerResource:GetPlayer(caster:GetPlayerID())
-
+		ability = self:GetAbility()
+		distrad = Vector(-9000,-9000,520):__sub(hero:GetAbsOrigin())
+		distdire = Vector(8350,8350,520):__sub(hero:GetAbsOrigin())
+		--print(distrad:Length2D())
+		--print(distdire:Length2D())
+		
 		killer_index = caster:entindex()
 		killed_by = params.attacker
 
 		if params.attacker == self:GetParent() and params.attacker:GetTeam() ~= params.unit:GetTeam() and not params.unit:IsIllusion() then
 
-			distance_closest = 15000
-
-			local units = FindUnitsInRadius(
-				caster:GetTeam(), 
-				caster:GetAbsOrigin(),
-				nil,
-				999999,
-				DOTA_UNIT_TARGET_TEAM_FRIENDLY,
-				DOTA_UNIT_TARGET_HERO,
-				DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS,
-				0,
-				false
-			)
-
-			for i, unit in pairs(units) do
-				if unit:GetName() ~= caster:GetName() then
-					local distance = math.floor(CalcDistanceBetweenEntityOBB(caster, unit))
-					if distance < distance_closest then
-						distance_closest = distance
-					end
-				end
-			end
-
-			print("closest distance: " .. distance_closest)
-
-			distance_level = self:GetAbility():GetSpecialValueFor("distance")
+			
 			gold_multiplier = self:GetAbility():GetSpecialValueFor("gold_multiplier")
+			
+			if caster:GetTeam() == DOTA_TEAM_GOODGUYS then 
+				x = distrad:Length2D()
+			else
+				x = distdire:Length2D()
+			end
+			
+			print(x)
 
-			print("distance calc: " .. math.floor(distance_closest / distance_level))
-			print("gold level: " .. gold_multiplier)
+			-- Vector 0000000000174650 [-6755.618164 -6503.004883 512.000000] radiant
+			-- Vector 00000000001BE060 [7034.102051 6459.533203 520.000000] dire
 
-			bonus = math.floor((distance_closest / distance_level) * gold_multiplier)
+
+			-- ((10 + (skill lvl * 10)) * (arctan((x-12000)/5000)+1)) + 100 
+			print("ability " .. ability:GetLevel())
+			bonus = target:GetMaximumGoldBounty() * (((10+(ability:GetLevel())*gold_multiplier)*(math.atan((x-12730)/5000)+1)))/100
+			bonus = math.floor(bonus)
+			--bonus = 10
 
 			print("bonus gold: " .. bonus)
 

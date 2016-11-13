@@ -22,17 +22,17 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"illusion_duration"			"30.0 30.0 30.0 30.0"
+				"illusion_duration"			"30.0 40.0 50.0 60.0"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"outgoing_damage"			"-80 -75 -70 -65"
+				"outgoing_damage"			"-30 -20 -10 -0"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"outgoing_damage_tooltip"	"20 25 30 35"
+				"outgoing_damage_tooltip"	"70 80 90 100"
 			}
 			"04"
 			{
@@ -47,7 +47,7 @@
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"images_count"				"3 3 3 3"
+				"images_count"				"1"
 			}
 			"07"
 			{
@@ -94,9 +94,9 @@
 	}
 
 	"misanthrope"
-	{
+		{
 		"BaseClass"				"ability_lua"
-		"ScriptFile"			"heroes/dylan/misanthrope.lua"
+		"ScriptFile"			"misanthrope_lua"
 		"AbilityTextureName" 	"misanthrope"
 
 		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -113,12 +113,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"gold_multiplier"	"2 4 6 8"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"distance"			"2000 1500 1000 500"
+				"gold_multiplier"	"10"
 			}
 		}
 	}
@@ -240,7 +235,7 @@
 		
 		"precache"
 		{
-			"particle"			"particles/invoker/acid_rain.vpcf"
+			"particle"			"particles/units/heroes/hero_slardar/slardar_amp_damage_rain.vpcf"
 		}
 		
 		"AbilitySpecial"
