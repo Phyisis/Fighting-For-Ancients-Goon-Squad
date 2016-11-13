@@ -2,7 +2,11 @@
 "DOTAAbilities"
 {
 	"Version"		"1"
-
+	
+	
+	//=================================================================================================================
+	// DYLAN
+	//=================================================================================================================
 	"gaggle_of_jews"
 	{
 		"BaseClass"				"ability_lua"
@@ -180,5 +184,71 @@
 				"tick_interval"				"0.25"
 			}
 		}
+	}
+	
+	//=================================================================================================================
+	// ERNEST
+	//=================================================================================================================
+	
+	"ernest_int1" //
+	{
+	
+	}
+	"ernest_int2"
+	{
+	
+	}
+	"ernest_int3"
+	{
+	
+	}
+	"ernest_swap"
+	{
+		"BaseClass"				"ability_lua"
+		"ScriptFile"			"heroes/invoker/ernest_swap.lua"
+		"AbilityTextureName" 	"gaggle_of_jews"
+		
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0.0"
+		
+		"AbilitySpecial"
+		{ 
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"flat_bonus"		"5 10 15"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"primary_bonus"		"15 30 45"
+			}
+		}
+	}
+	"ernest_agi1"
+	{
+	
+	}
+	"ernest_agi2"
+	{
+	
+	}
+	"ernest_agi3" 
+	{
+	
+	}
+	"ernest_str1" // aoe stun
+	{
+	
+	}
+	"ernest_str2"
+	{
+	
+	}
+	"ernest_str3" 
+	{
+	
 	}
 }
