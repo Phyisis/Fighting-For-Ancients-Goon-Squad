@@ -18,12 +18,14 @@ function modifier_ernest_swap:GetModifierBonusStats_Strength()
 	bonus_to_primary = self:GetAbility():GetSpecialValueFor("primary_bonus")
 	caster = self:GetParent()
 	if caster:GetPrimaryAttribute() == DOTA_ATTRIBUTE_STRENGTH then
-		--print("strength")
 		return bonus_str + bonus_to_primary
 	else
-		--print("flat strength")
 		return bonus_str
 	end
+end
+
+function modifier_ernest_swap:IsHidden()
+	return true
 end
 
 function modifier_ernest_swap:GetModifierBonusStats_Agility()
@@ -32,10 +34,8 @@ function modifier_ernest_swap:GetModifierBonusStats_Agility()
 	caster = self:GetParent()
 
 	if caster:GetPrimaryAttribute() == DOTA_ATTRIBUTE_AGILITY then
-		print("agility")
 		return bonus_agi + bonus_to_primary
 	else
-		print("flat agility")
 		return bonus_agi
 	end
 end
@@ -45,10 +45,8 @@ function modifier_ernest_swap:GetModifierBonusStats_Intellect()
 	bonus_to_primary = self:GetAbility():GetSpecialValueFor("primary_bonus")
 	caster = self:GetParent()
 	if caster:GetPrimaryAttribute() == DOTA_ATTRIBUTE_INTELLECT then
-		--print("intellect")
 		return bonus_int + bonus_to_primary
 	else
-		--print("flat intellect")
 		return bonus_int
 	end
 end

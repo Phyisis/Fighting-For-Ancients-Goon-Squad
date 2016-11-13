@@ -206,7 +206,7 @@
 	{
 		"BaseClass"				"ability_lua"
 		"ScriptFile"			"heroes/invoker/ernest_swap.lua"
-		"AbilityTextureName" 	"gaggle_of_jews"
+		"AbilityTextureName" 	"invoke"
 		
 		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
