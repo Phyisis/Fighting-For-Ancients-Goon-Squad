@@ -192,15 +192,47 @@
 	
 	"ernest_int1" //
 	{
-	
+		"AbilityTextureName" 	"ernest_int1"	
 	}
-	"ernest_int2"
+	"ernest_int2" //global acid rain
 	{
+		"BaseClass"				"ability_lua"
+		"ScriptFile"			"heroes/invoker/ernest_int2.lua"
+		"AbilityTextureName" 	"ernest_int2"
+		
+		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"60.0"
+		"AbilityManaCost"				"100.0 110.0 120.0 130.0"
+		
+		"AbilitySpecial"
+		{ 
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"flat_damage"		"5 10 15 20"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"percent_damage"	"0.25 0.5 0.75 1"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"			"10 15 20 25"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"500 600 700 800"
+			}
+		}
 	
 	}
 	"ernest_int3"
 	{
-	
+		"AbilityTextureName" 	"ernest_int3"	
 	}
 	"ernest_swap"
 	{
@@ -229,26 +261,27 @@
 	}
 	"ernest_agi1"
 	{
-	
+		"AbilityTextureName" 	"ernest_agi1"	
 	}
 	"ernest_agi2"
 	{
-	
+		"AbilityTextureName" 	"ernest_agi2"	
 	}
 	"ernest_agi3" 
 	{
-	
+		"AbilityTextureName" 	"ernest_agi3"	
 	}
 	"ernest_str1" // aoe stun
 	{
-	
+		"AbilityTextureName" 	"ernest_str1"	
 	}
 	"ernest_str2"
 	{
+		"AbilityTextureName" 	"ernest_str2"
 	
 	}
 	"ernest_str3" 
 	{
-	
+		"AbilityTextureName" 	"ernest_str3"	
 	}
 }
