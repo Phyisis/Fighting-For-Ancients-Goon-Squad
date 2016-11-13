@@ -196,38 +196,8 @@
 	}
 	"ernest_int2" //global acid rain
 	{
-		"BaseClass"				"ability_lua"
-		"ScriptFile"			"heroes/invoker/ernest_int2.lua"
 		"AbilityTextureName" 	"ernest_int2"
 		
-		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_POINT"
-		"AbilityCastPoint"				"0.5"
-		"AbilityCooldown"				"60.0"
-		"AbilityManaCost"				"100.0 110.0 120.0 130.0"
-		
-		"AbilitySpecial"
-		{ 
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"flat_damage"		"5 10 15 20"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"percent_damage"	"0.25 0.5 0.75 1"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"duration"			"10 15 20 25"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"500 600 700 800"
-			}
-		}
 	
 	}
 	"ernest_int3"
@@ -238,7 +208,7 @@
 	{
 		"BaseClass"				"ability_lua"
 		"ScriptFile"			"heroes/invoker/ernest_swap.lua"
-		"AbilityTextureName" 	"gaggle_of_jews"
+		"AbilityTextureName" 	"ernest_swap"
 		
 		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
