@@ -32,22 +32,6 @@
 	"npc_dota_hero_antimage_template"
 	{
 		"override_hero"				"npc_dota_hero_invoker"
-	
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"Model"						"models/heroes/invoker/invoker.mdl"				// Model.
-		"Portrait"					"vgui/hud/heroportraits/portrait_furion"						// Small image for hero selection
-		"IdleExpression"			"scenes/invoker/invoker_exp_idle_01.vcd"		// custom facial animation idle
-		"SoundSet"					"Hero_Invoker"													// Name of sound set.
-		"IdleSoundLoop"				"Hero_Invoker.IdleLoop"
-		"ModelScale" 				"0.74"
-		"LoadoutScale"        		".8"
-		"PickSound"					"invoker_invo_spawn_02"
-		"BanSound"					"invoker_invo_anger_04"
-		"AbilityDraftDisabled"		"1"
-		"ARDMDisabled"				"1"
-		"HeroSelectSoundEffect"		"Hero_Invoker.Pick"
-
 
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
@@ -78,8 +62,6 @@
 		"AttackAnimationPoint"		"0.4"									// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"									// Range within a target can be acquired.
 		"AttackRange"				"600"									// Range within a target can be attacked.
-		"ProjectileModel"			"invoker_base_attack"					// Particle system model for projectile.
-		"ProjectileSpeed"			"900"									// Speed of projectile.
 
 
 		// Attributes
@@ -96,11 +78,5 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"MovementSpeed"				"280"									// Speed.
 		"MovementTurnRate"			"0.5"									// Turning rate.
-		
-		"HealthBarOffset"			"170"
-		
-		"VoiceFile"					"scripts/voscripts/game_sounds_vo_invoker.txt"
-		"ParticleFile"				"particles/units/heroes/hero_invoker.pcf"
-		"GameSoundsFile"			"scripts/game_sounds_heroes/game_sounds_invoker.txt"
 	}
 }

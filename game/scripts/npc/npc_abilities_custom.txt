@@ -208,8 +208,8 @@
 		"ScriptFile"			"heroes/invoker/ernest_swap.lua"
 		"AbilityTextureName" 	"gaggle_of_jews"
 		
+		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"0.0"
 		

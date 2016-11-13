@@ -13,16 +13,15 @@ function modifier_ernest_swap:IsPurgable()
 	return false
 end
 
-
 function modifier_ernest_swap:GetModifierBonusStats_Strength()
 	bonus_str = self:GetAbility():GetSpecialValueFor("flat_bonus")
 	bonus_to_primary = self:GetAbility():GetSpecialValueFor("primary_bonus")
 	caster = self:GetParent()
-	if caster:GetPrimaryAttribute() == 0 then
-		print("strength")
+	if caster:GetPrimaryAttribute() == DOTA_ATTRIBUTE_STRENGTH then
+		--print("strength")
 		return bonus_str + bonus_to_primary
 	else
-		print("flat strength")
+		--print("flat strength")
 		return bonus_str
 	end
 end
@@ -31,7 +30,8 @@ function modifier_ernest_swap:GetModifierBonusStats_Agility()
 	bonus_agi = self:GetAbility():GetSpecialValueFor("flat_bonus")
 	bonus_to_primary = self:GetAbility():GetSpecialValueFor("primary_bonus")
 	caster = self:GetParent()
-	if caster:GetPrimaryAttribute() == 1 then
+
+	if caster:GetPrimaryAttribute() == DOTA_ATTRIBUTE_AGILITY then
 		print("agility")
 		return bonus_agi + bonus_to_primary
 	else
@@ -44,11 +44,11 @@ function modifier_ernest_swap:GetModifierBonusStats_Intellect()
 	bonus_int = self:GetAbility():GetSpecialValueFor("flat_bonus")
 	bonus_to_primary = self:GetAbility():GetSpecialValueFor("primary_bonus")
 	caster = self:GetParent()
-	if caster:GetPrimaryAttribute() == 2 then
-		print("intellect")
+	if caster:GetPrimaryAttribute() == DOTA_ATTRIBUTE_INTELLECT then
+		--print("intellect")
 		return bonus_int + bonus_to_primary
 	else
-		print("flat intellect")
+		--print("flat intellect")
 		return bonus_int
 	end
 end
