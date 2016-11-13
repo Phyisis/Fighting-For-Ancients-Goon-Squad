@@ -10,15 +10,9 @@ function jew_claw:OnSpellStart()
 	local midas_particle = ParticleManager:CreateParticle("particles/items2_fx/hand_of_midas.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)	
 	ParticleManager:SetParticleControlEnt(midas_particle, 1, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), false)
 
-<<<<<<< HEAD
 	-- gold = self:GetSpecialValueFor("gold_bonus")
 	gold = 1000
-	xp = self:GetSpecialValueFor("xp_bonus")
-=======
-	gold = self:GetSpecialValueFor("gold_bonus")
-	--xp = self:GetSpecialValueFor("xp_bonus")
 	xp = 500
->>>>>>> matt/master
 
 	target:SetDeathXP(math.floor(target:GetDeathXP() * xp))
 	target:SetMinimumGoldBounty(gold)
