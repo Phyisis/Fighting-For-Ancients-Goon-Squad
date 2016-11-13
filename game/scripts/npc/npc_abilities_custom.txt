@@ -3,7 +3,6 @@
 {
 	"Version"		"1"
 	
-	
 	//=================================================================================================================
 	// DYLAN
 	//=================================================================================================================
@@ -231,38 +230,13 @@
 	"ernest_int2" //global acid rain
 	{
 		"BaseClass"				"ability_lua"
-		"ScriptFile"			"heroes/invoker/ernest_int2.lua"
 		"AbilityTextureName" 	"ernest_int2"
-		
-		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_POINT"
-		"AbilityCastPoint"				"0.5"
-		"AbilityCooldown"				"60.0"
-		"AbilityManaCost"				"100.0 110.0 120.0 130.0"
-		
-		"AbilitySpecial"
-		{ 
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"flat_damage"		"5 10 15 20"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"percent_damage"	"0.25 0.5 0.75 1"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"duration"			"10 15 20 25"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"500 600 700 800"
-			}
-		}
-	
+		"ScriptFile"			"heroes/invoker/ernest_int2.lua"
+		"AbilityTextureName" 	"ernest_agi1"
+
+		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0.0"
 	}
 
 	"ernest_int3"
@@ -270,8 +244,6 @@
 		"BaseClass"				"ability_lua"
 		"AbilityTextureName" 	"ernest_int3"
 		"ScriptFile"			"heroes/invoker/ernest_int3.lua"
-		"AbilityTextureName" 	"ernest_agi1"
-
 		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"0.0"
