@@ -214,7 +214,6 @@
 		"BaseClass"				"ability_lua"
 		"AbilityTextureName" 	"ernest_int1"
 		"ScriptFile"			"heroes/invoker/ernest_int1.lua"
-		"AbilityTextureName" 	"ernest_agi1"
 
 		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityCastPoint"				"0.0"
@@ -279,7 +278,6 @@
 		"BaseClass"				"ability_lua"
 		"AbilityTextureName" 	"ernest_agi1"	
 		"ScriptFile"			"heroes/invoker/ernest_agi1.lua"
-		"AbilityTextureName" 	"ernest_agi1"
 
 		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityCastPoint"				"0.0"
@@ -290,7 +288,6 @@
 		"BaseClass"				"ability_lua"
 		"AbilityTextureName" 	"ernest_agi2"
 		"ScriptFile"			"heroes/invoker/ernest_agi2.lua"
-		"AbilityTextureName" 	"ernest_agi1"
 
 		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityCastPoint"				"0.0"
@@ -301,7 +298,6 @@
 		"BaseClass"				"ability_lua"
 		"AbilityTextureName" 	"ernest_agi3"
 		"ScriptFile"			"heroes/invoker/ernest_agi3.lua"
-		"AbilityTextureName" 	"ernest_agi1"
 
 		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityCastPoint"				"0.0"
@@ -312,7 +308,6 @@
 		"BaseClass"				"ability_lua"
 		"AbilityTextureName" 	"ernest_str1"	
 		"ScriptFile"			"heroes/invoker/ernest_str1.lua"
-		"AbilityTextureName" 	"ernest_agi1"
 
 		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityCastPoint"				"0.0"
@@ -323,11 +318,31 @@
 		"BaseClass"				"ability_lua"
 		"AbilityTextureName" 	"ernest_str2"
 		"ScriptFile"			"heroes/invoker/ernest_str2.lua"
-		"AbilityTextureName" 	"ernest_agi1"
-
+		
 		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"0.0"
+		"AbilityCastRange"              "500"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"10.0"
+		"AbilityManaCost"				"100 110 120 130"
+		
+		"AbilitySpecial"
+		{ 
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"500"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"			"6 8 10 12"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"velocity"			"4 5 6 7"
+			}
+		}		
 	
 	}
 	"ernest_str3" 
@@ -335,7 +350,6 @@
 		"BaseClass"				"ability_lua"
 		"AbilityTextureName" 	"ernest_str3"
 		"ScriptFile"			"heroes/invoker/ernest_str3.lua"
-		"AbilityTextureName" 	"ernest_agi1"
 
 		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityCastPoint"				"0.0"

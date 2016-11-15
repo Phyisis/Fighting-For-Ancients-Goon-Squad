@@ -34,7 +34,7 @@ function ernest_int2:OnSpellStart()
 		
 		num = num + 1
 		
-		if num ~= duration then
+		if num < duration then
 			return 1
 		end
 						
