@@ -25,7 +25,7 @@ function ernest_int2:OnSpellStart()
 			local damageTable = {
 				victim = v,
 				attacker = caster,
-				damage = self:GetSpecialValueFor("flat_damage") + v:GetHealth() * self:GetSpecialValueFor("flat_damage")/100 ,
+				damage = self:GetSpecialValueFor("flat_damage") + v:GetHealth() * self:GetSpecialValueFor("percent_damage")/100 ,
 				damage_type = DAMAGE_TYPE_MAGICAL,
 			}
 			ApplyDamage(damageTable)

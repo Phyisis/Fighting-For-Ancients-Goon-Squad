@@ -209,18 +209,38 @@
 		}
 	}
 
-	"ernest_int1"
+	"ernest_int1" // purge/nuke
 	{
 		"BaseClass"				"ability_lua"
 		"AbilityTextureName" 	"ernest_int1"
 		"ScriptFile"			"heroes/invoker/ernest_int1.lua"
 
-		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"0.0"
+		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+
+		"AbilityCastRange"              "600"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"4.0"
+		"AbilityManaCost"				"75.0"
+		
+		"precache"
+		{
+			"particle"			"particles/items_fx/diffusal_purge_c.vpcf"
+		}
+		
+		"AbilitySpecial"
+		{ 
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"90 130 170 210"
+			}
+		}
 	}
 
-	"ernest_int2" //global acid rain
+	"ernest_int2" // acid rain
 	{		
 		"BaseClass"				"ability_lua"
 		"AbilityTextureName" 	"ernest_int2"
@@ -230,7 +250,7 @@
 		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityCastPoint"				"0.5"
 		"AbilityCooldown"				"60.0"
-		"AbilityManaCost"				"100.0 110.0 120.0 130.0"
+		"AbilityManaCost"				"100.0 120.0 140.0 160.0"
 		
 		"precache"
 		{
@@ -273,7 +293,7 @@
 		"AbilityCooldown"				"0.0"
 	}
 
-	"ernest_agi1"
+	"ernest_agi1" 
 	{
 		"BaseClass"				"ability_lua"
 		"AbilityTextureName" 	"ernest_agi1"	
@@ -283,7 +303,7 @@
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"0.0"
 	}
-	"ernest_agi2"
+	"ernest_agi2" // pocket sand
 	{
 		"BaseClass"				"ability_lua"
 		"AbilityTextureName" 	"ernest_agi2"
@@ -292,16 +312,33 @@
 		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"0.0"
+		
+		
 	}
-	"ernest_agi3" 
+	"ernest_agi3" // invis
 	{
 		"BaseClass"				"ability_lua"
 		"AbilityTextureName" 	"ernest_agi3"
 		"ScriptFile"			"heroes/invoker/ernest_agi3.lua"
 
 		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"0.0"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"30.0"
+		
+				
+		"AbilitySpecial"
+		{ 
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"			"25 30 35 40"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"fade_time"			"1"
+			}
+		}
 	}
 	"ernest_str1" // aoe stun
 	{
@@ -313,7 +350,7 @@
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"0.0"
 	}
-	"ernest_str2"
+	"ernest_str2" // gravitas
 	{
 		"BaseClass"				"ability_lua"
 		"AbilityTextureName" 	"ernest_str2"
@@ -323,7 +360,7 @@
 		"AbilityCastRange"              "500"
 		"AbilityCastPoint"				"0.3"
 		"AbilityCooldown"				"10.0"
-		"AbilityManaCost"				"100 110 120 130"
+		"AbilityManaCost"				"110 120 130 140"
 		
 		"AbilitySpecial"
 		{ 

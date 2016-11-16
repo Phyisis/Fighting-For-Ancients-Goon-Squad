@@ -47,12 +47,9 @@ function modifier_misanthrope:OnDeath(params)
 
 
 			-- ((10 + (skill lvl * 10)) * (arctan((x-12000)/5000)+1)) + 100 
-			print("ability " .. ability:GetLevel())
 			bonus = target:GetMaximumGoldBounty() * (((10+(ability:GetLevel())*gold_multiplier)*(math.atan((x-12730)/5000)+1)))/100
 			bonus = math.floor(bonus)
 			--bonus = 10
-
-			print("bonus gold: " .. bonus)
 
 			PlayerResource:ModifyGold(caster:GetPlayerID(), bonus, false, 0)
 

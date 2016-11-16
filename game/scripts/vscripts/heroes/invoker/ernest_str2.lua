@@ -16,7 +16,6 @@ function ernest_str2:OnSpellStart()
 			direction = (point - target:GetAbsOrigin())/distance
 			if distance > 150 then
 				target:SetAbsOrigin(target:GetAbsOrigin() + direction * velocity)
-				print(velocity)
 			end
 		end
 		
