@@ -96,10 +96,10 @@
 	"misanthrope"
 		{
 		"BaseClass"				"ability_lua"
-		"ScriptFile"			"misanthrope_lua"
+		"ScriptFile"			"heroes/dylan/misanthrope.lua"
 		"AbilityTextureName" 	"misanthrope"
 
-		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		"precache"
 		{
@@ -254,7 +254,8 @@
 		
 		"precache"
 		{
-			"particle"			"particles/units/heroes/hero_slardar/slardar_amp_damage_rain.vpcf"
+			"particle"			"particles/acid_rain.vpcf"
+			"particle"			"particles/acid_ripples.vpcf"
 		}
 		
 		"AbilitySpecial"
@@ -323,7 +324,13 @@
 
 		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityCastPoint"				"0.3"
-		"AbilityCooldown"				"30.0"
+		"AbilityCooldown"				"60.0"
+		"AbilityManaCost"				"50.0"
+		
+		"precache"
+		{
+			"particle"			"particles/green_fire.vpcf"
+		}
 		
 				
 		"AbilitySpecial"
@@ -336,11 +343,11 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"fade_time"			"1"
+				"fade_time"			"2"
 			}
 		}
 	}
-	"ernest_str1" // aoe stun
+	"ernest_str1" // single target stun
 	{
 		"BaseClass"				"ability_lua"
 		"AbilityTextureName" 	"ernest_str1"	

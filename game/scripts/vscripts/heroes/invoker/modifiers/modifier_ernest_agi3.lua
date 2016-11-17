@@ -56,6 +56,10 @@ function modifier_ernest_agi3:OnAbilityExecuted( params )
 	end
 end
 
+function modifier_ernest_agi3:GetTexture()
+	return "ernest_agi3"
+end
+
 function modifier_ernest_agi3:GetAttributes()
 	return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE 
 end

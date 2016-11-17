@@ -8,17 +8,51 @@ function ernest_int2:OnSpellStart()
 	target = caster:GetCursorPosition()
 	duration = self:GetSpecialValueFor("duration")
 	radius = self:GetSpecialValueFor("radius")
-	num = 0
+	one = Vector(radius,0,0)
+	num1 = 0
+	num2 = 0
 	AddFOWViewer(caster:GetTeamNumber(), target, radius, duration, false)
 	local thinker = CreateModifierThinker(caster, self, "rain_thinker", {["duration"] = duration}, target, caster:GetTeamNumber(), false)
-	local rain_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_slardar/slardar_amp_damage_rain.vpcf", PATTACH_ABSORIGIN, thinker)	
-	ParticleManager:SetParticleControl(rain_particle, 0, Vector(radius,radius,0))
-	ParticleManager:SetParticleControl(rain_particle, 2, Vector(0,0,600))
-	print(thinker:GetAbsOrigin() + Vector(0,0,200))
+	local rain_particle = ParticleManager:CreateParticle("particles/acid_rain.vpcf", PATTACH_WORLDORIGIN, nil)	
+	ParticleManager:SetParticleControl(rain_particle, 1, target)
+	ParticleManager:SetParticleControl(rain_particle, 2, target)
+	
+	Timers:CreateTimer(0.1, function()
+			
+		local heroes_in_radius = FindUnitsInRadius(caster:GetTeamNumber(), target, nil, self:GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, 0, 0, false)
+		
+			
+		for _,v in pairs(heroes_in_radius) do			
+			v:AddNewModifier(caster, nil, "modifier_ernest_int2", nil)
+		end
+		
+		local all_heroes = HeroList:GetAllHeroes()
+		
+		for _,v in pairs(all_heroes) do
+			outside_radius = true
+			
+			for _,w in pairs(heroes_in_radius) do
+				if v == w then
+					outside_radius = false
+				end
+			end
+			
+			if outside_radius == true then
+				v:RemoveModifierByName("modifier_ernest_int2")
+			end
+		end
+		
+		num1 = num1 + 0.1
+		
+		if num1 < duration then
+			return 0.1
+		end
+	end)
 	
 	Timers:CreateTimer(1, function()
 			
-		victims = FindUnitsInRadius(caster:GetTeamNumber(), target, nil, self:GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, 0, 0, false)
+		local victims = FindUnitsInRadius(caster:GetTeamNumber(), target, nil, self:GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, 0, 0, false)
+		
 			
 		for _,v in pairs(victims) do
 			
@@ -32,14 +66,23 @@ function ernest_int2:OnSpellStart()
 		
 		end
 		
-		num = num + 1
+		num2 = num2 + 1
 		
-		if num < duration then
+		if num2 < duration then
 			return 1
 		end
-						
 	end)
 	
-	ParticleManager:DestroyParticle(rain_particle, false)
-
+	Timers:CreateTimer(duration, function()
+		ParticleManager:DestroyParticle(rain_particle, false)
+	end)
+	
+	Timers:CreateTimer(duration + 0.1, function()
+		local all_heroes = HeroList:GetAllHeroes()
+		
+		for _,v in pairs(all_heroes) do
+			v:RemoveModifierByName("modifier_ernest_int2")
+		end
+	end)
+		
 end
