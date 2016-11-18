@@ -11,18 +11,32 @@ function ernest_int2:OnSpellStart()
 	one = Vector(radius,0,0)
 	num1 = 0
 	num2 = 0
+	
 	AddFOWViewer(caster:GetTeamNumber(), target, radius, duration, false)
+	
 	local thinker = CreateModifierThinker(caster, self, "rain_thinker", {["duration"] = duration}, target, caster:GetTeamNumber(), false)
 	local rain_particle = ParticleManager:CreateParticle("particles/acid_rain.vpcf", PATTACH_WORLDORIGIN, nil)	
 	ParticleManager:SetParticleControl(rain_particle, 1, target)
 	ParticleManager:SetParticleControl(rain_particle, 2, target)
+	
+	if IsServer() then
+		StartSoundEventFromPosition("lightning.thunder", target)
+	end
 	
 	Timers:CreateTimer(0.1, function()
 			
 		local heroes_in_radius = FindUnitsInRadius(caster:GetTeamNumber(), target, nil, self:GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, 0, 0, false)
 		
 			
-		for _,v in pairs(heroes_in_radius) do			
+		for _,v in pairs(heroes_in_radius) do
+			local damageTable = {
+				victim = v,
+				attacker = caster,
+				damage = self:GetSpecialValueFor("flat_damage")/10 + v:GetHealth() * self:GetSpecialValueFor("percent_damage")/1000 ,
+				damage_type = DAMAGE_TYPE_MAGICAL,
+			}
+			ApplyDamage(damageTable)
+			
 			v:AddNewModifier(caster, nil, "modifier_ernest_int2", nil)
 		end
 		
@@ -49,40 +63,18 @@ function ernest_int2:OnSpellStart()
 		end
 	end)
 	
-	Timers:CreateTimer(1, function()
-			
-		local victims = FindUnitsInRadius(caster:GetTeamNumber(), target, nil, self:GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, 0, 0, false)
-		
-			
-		for _,v in pairs(victims) do
-			
-			local damageTable = {
-				victim = v,
-				attacker = caster,
-				damage = self:GetSpecialValueFor("flat_damage") + v:GetHealth() * self:GetSpecialValueFor("percent_damage")/100 ,
-				damage_type = DAMAGE_TYPE_MAGICAL,
-			}
-			ApplyDamage(damageTable)
-		
+	Timers:CreateTimer(duration + 0.2, function()
+		if IsServer() then
+			StopSoundEvent("lightning.thunder", nil)
 		end
 		
-		num2 = num2 + 1
-		
-		if num2 < duration then
-			return 1
-		end
-	end)
-	
-	Timers:CreateTimer(duration, function()
-		ParticleManager:DestroyParticle(rain_particle, false)
-	end)
-	
-	Timers:CreateTimer(duration + 0.1, function()
 		local all_heroes = HeroList:GetAllHeroes()
 		
 		for _,v in pairs(all_heroes) do
 			v:RemoveModifierByName("modifier_ernest_int2")
 		end
+		
+		ParticleManager:DestroyParticle(rain_particle, false)
 	end)
 		
 end

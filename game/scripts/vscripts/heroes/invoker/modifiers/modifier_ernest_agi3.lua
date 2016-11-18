@@ -22,7 +22,7 @@ end
 
 function modifier_ernest_agi3:CheckState()
 	local invis = false
-	if self:GetElapsedTime() > 1 then 
+	if self:GetElapsedTime() > 2 then 
 		invis = true 
 	end
 	

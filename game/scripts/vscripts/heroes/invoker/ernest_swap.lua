@@ -1,9 +1,14 @@
 ernest_swap = class({})
 
-LinkLuaModifier("modifier_ernest_swap", "heroes/invoker/modifiers/modifier_ernest_swap.lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier("modifier_ernest_swap_agi", "heroes/invoker/modifiers/modifier_ernest_swap_agi.lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier("modifier_ernest_swap_int", "heroes/invoker/modifiers/modifier_ernest_swap_int.lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier("modifier_ernest_swap_str", "heroes/invoker/modifiers/modifier_ernest_swap_str.lua", LUA_MODIFIER_MOTION_NONE )
 
-function ernest_swap:GetIntrinsicModifierName()
-	return "modifier_ernest_swap"
+function ernest_swap:OnUpgrade()
+	caster = self:GetCaster()
+	if self:GetLevel() == 1 then
+		caster:AddNewModifier(caster, self, "modifier_ernest_swap_int", nil)
+	end
 end
 
 function ernest_swap:OnSpellStart()
@@ -12,6 +17,8 @@ function ernest_swap:OnSpellStart()
 	stat = caster:GetPrimaryAttribute()
 	
 	if stat == DOTA_ATTRIBUTE_INTELLECT then
+		caster:RemoveModifierByName("modifier_ernest_swap_int")
+		caster:AddNewModifier(caster, self, "modifier_ernest_swap_agi", nil)
 		caster:SetPrimaryAttribute(DOTA_ATTRIBUTE_AGILITY)
 		-- caster:SwapAbilities("ernest_int1","ernest_agi1",false,true)
 		-- caster:SwapAbilities("ernest_int2","ernest_agi2",false,true)
@@ -34,6 +41,8 @@ function ernest_swap:OnSpellStart()
 	end
 
 	if stat == DOTA_ATTRIBUTE_AGILITY then
+		caster:RemoveModifierByName("modifier_ernest_swap_agi")
+		caster:AddNewModifier(caster, self, "modifier_ernest_swap_str", nil)
 		caster:SetPrimaryAttribute(DOTA_ATTRIBUTE_STRENGTH)
 		-- caster:SwapAbilities("ernest_agi1","ernest_str1",false,true)
 		-- caster:SwapAbilities("ernest_agi2","ernest_str2",false,true)
@@ -56,6 +65,8 @@ function ernest_swap:OnSpellStart()
 	end
 
 	if stat == DOTA_ATTRIBUTE_STRENGTH then
+		caster:RemoveModifierByName("modifier_ernest_swap_str")
+		caster:AddNewModifier(caster, self, "modifier_ernest_swap_int", nil)
 		caster:SetPrimaryAttribute(DOTA_ATTRIBUTE_INTELLECT)
 		-- caster:SwapAbilities("ernest_str1","ernest_int1",false,true)
 		-- caster:SwapAbilities("ernest_str2","ernest_int2",false,true)
@@ -78,5 +89,5 @@ function ernest_swap:OnSpellStart()
 	end
 
 	caster:CalculateStatBonus()
-
 end
+

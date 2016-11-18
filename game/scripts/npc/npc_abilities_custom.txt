@@ -191,7 +191,7 @@
 		
 		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCooldown"				"0.0"
 		
 		"AbilitySpecial"
@@ -227,7 +227,8 @@
 		
 		"precache"
 		{
-			"particle"			"particles/items_fx/diffusal_purge_c.vpcf"
+			"soundfile"			"soundevents/game_sounds_creeps.vsndevts"
+			"particle"			"particles/generic_gameplay/generic_purge.vpcf"
 		}
 		
 		"AbilitySpecial"
@@ -248,12 +249,14 @@
 		
 		
 		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityCastRange"              "0"
 		"AbilityCastPoint"				"0.5"
 		"AbilityCooldown"				"60.0"
 		"AbilityManaCost"				"100.0 120.0 140.0 160.0"
 		
 		"precache"
 		{
+			"soundfile"			"soundevents/game_sounds_ambient.vsndevts"
 			"particle"			"particles/acid_rain.vpcf"
 			"particle"			"particles/acid_ripples.vpcf"
 		}
@@ -263,7 +266,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"flat_damage"		"5"
+				"flat_damage"		"10"
 			}
 			"02"
 			{
@@ -284,26 +287,50 @@
 	
 	}
 
-	"ernest_int3"
+	"ernest_int3" // 
 	{
 		"BaseClass"				"ability_lua"
 		"AbilityTextureName" 	"ernest_int3"
 		"ScriptFile"			"heroes/invoker/ernest_int3.lua"
-		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"0.0"
+
 	}
 
-	"ernest_agi1" 
+	"ernest_agi1" // phase
 	{
 		"BaseClass"				"ability_lua"
 		"AbilityTextureName" 	"ernest_agi1"	
 		"ScriptFile"			"heroes/invoker/ernest_agi1.lua"
 
-		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"0.0"
+		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+		"AbilityCastRange"              "800"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"25.0"
+		"AbilityManaCost"				"140.0 150.0 160.0 170.0"
+		
+		"AbilitySpecial"
+		{ 
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"100 150 200 250"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"			"7"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"evasion"			"75"
+			}
+		}
+		
 	}
+	
 	"ernest_agi2" // pocket sand
 	{
 		"BaseClass"				"ability_lua"
@@ -347,15 +374,42 @@
 			}
 		}
 	}
-	"ernest_str1" // single target stun
+	"ernest_str1" // ring of fire
 	{
 		"BaseClass"				"ability_lua"
 		"AbilityTextureName" 	"ernest_str1"	
 		"ScriptFile"			"heroes/invoker/ernest_str1.lua"
 
-		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"0.0"
+		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCastRange"              "700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"60.0"
+		"AbilityManaCost"				"100.0 120.0 140.0 160.0"
+		
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
+			"particle"			"particles/fire_ring.vpcf"
+		}
+	
+		"AbilitySpecial"
+		{ 
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"			"5 7 9 11"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"40 60 80 100"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"700"
+			}
+		}	
 	}
 	"ernest_str2" // gravitas
 	{
