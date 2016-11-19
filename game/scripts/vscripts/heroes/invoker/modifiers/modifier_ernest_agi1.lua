@@ -7,15 +7,24 @@ function modifier_ernest_agi1:DeclareFunctions()
 	return funcs
 end
 
+function modifier_ernest_agi1:DeclareVariables()
+	local vars = {
+		ability,
+		evasion,
+	}
+	return vars
+end
+
 function modifier_ernest_agi1:OnCreated()
 	if IsServer() then
+		evasion = self:GetAbility():GetSpecialValueFor("evasion")
+		ability = self:GetAbility()
 		evasion_blur = ParticleManager:CreateParticle( "particles/evasion_blur.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
 			ParticleManager:SetParticleControl( evasion_blur, 0, self:GetParent():GetAbsOrigin() )
 	end
 end
 
 function modifier_ernest_agi1:GetModifierEvasion_Constant()
-	evasion = self:GetAbility():GetSpecialValueFor("evasion")
 	return evasion
 end
 

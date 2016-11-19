@@ -292,7 +292,37 @@
 		"BaseClass"				"ability_lua"
 		"AbilityTextureName" 	"ernest_int3"
 		"ScriptFile"			"heroes/invoker/ernest_int3.lua"
-
+		
+		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityCastRange"              "1000"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"60.0"
+		"AbilityManaCost"				"100.0 120.0 140.0 160.0"
+		
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+			"particle"			"particles/ice_sheet.vpcf"
+		}
+		
+		"AbilitySpecial"
+		{ 
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"300 400 500 600"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"			"10 15 20 25"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"slow"				"30 35 40 45"
+			}
+		}
 	}
 
 	"ernest_agi1" // phase
@@ -307,7 +337,7 @@
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
 		"AbilityCastRange"              "800"
 		"AbilityCastPoint"				"0.3"
-		"AbilityCooldown"				"25.0"
+		"AbilityCooldown"				"15.0"
 		"AbilityManaCost"				"140.0 150.0 160.0 170.0"
 		
 		"AbilitySpecial"
@@ -337,11 +367,36 @@
 		"AbilityTextureName" 	"ernest_agi2"
 		"ScriptFile"			"heroes/invoker/ernest_agi2.lua"
 
-		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"0.0"
+		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityCastRange"              "800"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"20.0"
+		"AbilityManaCost"				"140 160 180 200"
+		"AoERadius"						"100 150 200 250"
 		
+		"precache"
+		{
+			"particle"			"particles/splinter_leaf.vpcf"
+		}
 		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"300"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"area_of_effect"		"100 150 200 250"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"100 150 200 250"
+			}			
+		}		
 	}
 	"ernest_agi3" // invis
 	{
@@ -420,7 +475,7 @@
 		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityCastRange"              "500"
 		"AbilityCastPoint"				"0.3"
-		"AbilityCooldown"				"10.0"
+		"AbilityCooldown"				"50.0"
 		"AbilityManaCost"				"110 120 130 140"
 		
 		"AbilitySpecial"
@@ -455,7 +510,7 @@
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
 		"AbilityCastRange"              "300 400 500 600"
 		"AbilityCastPoint"				"0.3"
-		"AbilityCooldown"				"10.0"
+		"AbilityCooldown"				"15.0"
 		"AbilityManaCost"				"110 120 130 140"
 		
 		"AbilitySpecial"

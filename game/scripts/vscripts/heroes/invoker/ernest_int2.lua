@@ -1,7 +1,7 @@
 ernest_int2 = class({})
 
 LinkLuaModifier("modifier_ernest_int2", "heroes/invoker/modifiers/modifier_ernest_int2.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("rain_thinker", "heroes/invoker/modifiers/rain_thinker.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("generic_thinker", "heroes/invoker/modifiers/generic_thinker.lua", LUA_MODIFIER_MOTION_NONE)
 
 function ernest_int2:OnSpellStart()
 	caster = self:GetCaster()
@@ -14,7 +14,7 @@ function ernest_int2:OnSpellStart()
 	
 	AddFOWViewer(caster:GetTeamNumber(), target, radius, duration, false)
 	
-	local thinker = CreateModifierThinker(caster, self, "rain_thinker", {["duration"] = duration}, target, caster:GetTeamNumber(), false)
+	local thinker = CreateModifierThinker(caster, self, "generic_thinker", {["duration"] = duration}, target, caster:GetTeamNumber(), false)
 	
 	local rain_particle = ParticleManager:CreateParticle("particles/acid_ripple.vpcf", PATTACH_WORLDORIGIN, nil)	
 		ParticleManager:SetParticleControl(rain_particle, 10, target:__add(Vector(0,0,10)))

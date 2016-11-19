@@ -1,7 +1,7 @@
 ernest_str1 = class({})
 
 LinkLuaModifier("modifier_ernest_str1", "heroes/invoker/modifiers/modifier_ernest_str1.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("fire_thinker", "heroes/invoker/modifiers/fire_thinker.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("generic_thinker", "heroes/invoker/modifiers/generic_thinker.lua", LUA_MODIFIER_MOTION_NONE)
 
 function ernest_str1:OnSpellStart()
 	caster = self:GetCaster()
@@ -10,7 +10,7 @@ function ernest_str1:OnSpellStart()
 	radius = self:GetSpecialValueFor("radius")
 	num = 0
 	
-	local thinker = CreateModifierThinker(caster, self, "fire_thinker", {["duration"] = duration}, target, caster:GetTeamNumber(), false)
+	local thinker = CreateModifierThinker(caster, self, "generic_thinker", {["duration"] = duration}, target, caster:GetTeamNumber(), false)
 	local ash_particle = ParticleManager:CreateParticle("particles/ash_ring.vpcf", PATTACH_WORLDORIGIN, nil)
 		ParticleManager:SetParticleControl(ash_particle, 3, target)
 

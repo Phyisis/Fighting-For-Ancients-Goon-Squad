@@ -1,6 +1,6 @@
-fire_thinker = class({})
+generic_thinker = class({})
 
-function fire_thinker:OnIntervalThink()
+function generic_thinker:OnIntervalThink()
 	if IsServer() then		
 		--[[
 			local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_lina/lina_spell_light_strike_array.vpcf", PATTACH_WORLDORIGIN, nil )
