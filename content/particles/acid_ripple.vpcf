@@ -52,8 +52,6 @@
 		},
 		{
 			_class = "C_INIT_RandomAlpha"
-			m_nAlphaMax = 200
-			m_nAlphaMin = 150
 		},
 		{
 			_class = "C_INIT_RandomRadius"
@@ -77,15 +75,21 @@
 			_class = "C_INIT_CreateWithinSphere"
 			m_fRadiusMax = 5.0
 			m_fRadiusMin = 5.0
-			m_nControlPointNumber = 1
+			m_nControlPointNumber = 10
 		},
 	]
 	m_Emitters = 
 	[
 		{
 			_class = "C_OP_ContinuousEmitter"
-			m_flEmitRate = 80.0
+			m_flEmitRate = 200.0
 			m_flEmissionDuration = -1.0
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/acid_rain.vpcf"
 		},
 	]
 }

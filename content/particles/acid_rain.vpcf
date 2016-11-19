@@ -47,7 +47,7 @@
 		},
 		{
 			_class = "C_OP_PositionLock"
-			m_nControlPointNumber = 2
+			m_nControlPointNumber = 1
 			m_bLockRot = true
 			m_flStartTime_max = 0.25
 			m_flStartTime_min = 0.25
@@ -91,6 +91,7 @@
 			m_OffsetMax = [ 400.0, 400.0, 600.0 ]
 			m_OffsetMin = [ -400.0, -400.0, 400.0 ]
 			m_bLocalCoords = true
+			m_nControlPointNumber = 3
 		},
 		{
 			_class = "C_INIT_RingWave"
@@ -102,15 +103,7 @@
 	[
 		{
 			_class = "C_OP_ContinuousEmitter"
-			m_flEmitRate = 250.0
-		},
-	]
-	m_Children = 
-	[
-		{
-			m_ChildRef = resource:"particles/acid_ripple.vpcf"
-		},
-		{
+			m_flEmitRate = 500.0
 		},
 	]
 }

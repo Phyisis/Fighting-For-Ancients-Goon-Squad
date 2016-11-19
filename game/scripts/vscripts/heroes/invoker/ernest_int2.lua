@@ -15,9 +15,10 @@ function ernest_int2:OnSpellStart()
 	AddFOWViewer(caster:GetTeamNumber(), target, radius, duration, false)
 	
 	local thinker = CreateModifierThinker(caster, self, "rain_thinker", {["duration"] = duration}, target, caster:GetTeamNumber(), false)
-	local rain_particle = ParticleManager:CreateParticle("particles/acid_rain.vpcf", PATTACH_WORLDORIGIN, nil)	
-	ParticleManager:SetParticleControl(rain_particle, 1, target)
-	ParticleManager:SetParticleControl(rain_particle, 2, target)
+	
+	local rain_particle = ParticleManager:CreateParticle("particles/acid_ripple.vpcf", PATTACH_WORLDORIGIN, nil)	
+		ParticleManager:SetParticleControl(rain_particle, 10, target:__add(Vector(0,0,10)))
+		ParticleManager:SetParticleControl(rain_particle, 2, target:__add(Vector(0,0,200)))
 	
 	if IsServer() then
 		StartSoundEventFromPosition("lightning.thunder", target)

@@ -11,8 +11,8 @@ function ernest_str1:OnSpellStart()
 	num = 0
 	
 	local thinker = CreateModifierThinker(caster, self, "fire_thinker", {["duration"] = duration}, target, caster:GetTeamNumber(), false)
-	local fire_particle = ParticleManager:CreateParticle("particles/fire_ring.vpcf", PATTACH_WORLDORIGIN, nil)
-		ParticleManager:SetParticleControl(fire_particle, 3, target)
+	local ash_particle = ParticleManager:CreateParticle("particles/ash_ring.vpcf", PATTACH_WORLDORIGIN, nil)
+		ParticleManager:SetParticleControl(ash_particle, 3, target)
 
 	
 	if IsServer() then
@@ -84,8 +84,8 @@ function ernest_str1:OnSpellStart()
 		for _,v in pairs(all_heroes) do
 			v:RemoveModifierByName("modifier_ernest_str1")
 		end
-		
-		ParticleManager:DestroyParticle(fire_particle, false)
+
+		ParticleManager:DestroyParticle(ash_particle, false)
 	end)
 		
 end

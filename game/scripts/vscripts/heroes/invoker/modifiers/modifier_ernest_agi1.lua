@@ -32,5 +32,7 @@ function modifier_ernest_agi1:IsDebuff()
 end
 
 function modifier_ernest_agi1:OnDestroy()
-	ParticleManager:DestroyParticle(evasion_blur, false)
+	if IsServer() then 
+		ParticleManager:DestroyParticle(evasion_blur, false)
+	end
 end
