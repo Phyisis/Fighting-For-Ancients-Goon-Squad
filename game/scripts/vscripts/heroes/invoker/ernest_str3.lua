@@ -5,8 +5,7 @@ LinkLuaModifier("modifier_ernest_str3", "heroes/invoker/modifiers/modifier_ernes
 function ernest_str3:OnSpellStart()
 	caster = self:GetCaster()
 	target = self:GetCursorTarget()
-	duration = self:GetSpecialValueFor("duration")
-	
+	duration = self:GetSpecialValueFor("duration")	
 	target:AddNewModifier(caster, self, "modifier_ernest_str3", {["duration"] = duration})
 end
 	

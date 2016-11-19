@@ -66,7 +66,8 @@ function FAGSDota:ReloadScripts()
 end
 
 function FAGSDota:EzDebug()
-	SendToServerConsole("dota_dev hero_level 25")
+	SendToServerConsole("dota_dev hero_maxlevel")
+	SendToServerConsole("dota_dev player_givegold 99999")
 
 	SendToServerConsole("dota_create_item travel 2")
 	SendToServerConsole("dota_create_item rapier")
@@ -79,6 +80,9 @@ function FAGSDota:EzDebug()
 
 	SendToServerConsole("dota_spawn_creeps")
 	SendToServerConsole("dota_spawn_neutrals")
+	SendToServerConsole("dota_create_unit meepo enemy")
+	SendToServerConsole("dota_bot_give_level 25")
+	SendToServerConsole("dota_bot_give_item heart")
 end
 
 

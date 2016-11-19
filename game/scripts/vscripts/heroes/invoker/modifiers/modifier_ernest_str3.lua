@@ -9,9 +9,32 @@ function modifier_ernest_str3:DeclareFunctions()
 	return funcs
 end
 
+function modifier_ernest_str3:DeclareVariables()
+	local vars = {
+		ability,
+		threshold,
+		stun_duration,
+		target,
+		damagetohero,
+		stunned,
+		ignoredamage,
+		ihd,
+		icd,
+		itd,
+		chd,
+		ccd,
+		ctd,
+	}
+	return vars
+end
+
 function modifier_ernest_str3:OnCreated()	
 	if IsServer() then
+		ability = self:GetAbility()		
+		threshold = ability:GetSpecialValueFor("damage_threshold")
+		stun_duration = ability:GetSpecialValueFor("stun_duration")
 		target = self:GetParent():GetPlayerID()	
+		
 		exhaust_particle = ParticleManager:CreateParticle( "particles/fire_stun.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
 			ParticleManager:SetParticleControl( exhaust_particle, 0, self:GetParent():GetAbsOrigin())
 	
@@ -26,9 +49,6 @@ end
 
 function modifier_ernest_str3:CheckState()
 	if IsServer() then
-		ability = self:GetAbility()
-		threshold = ability:GetSpecialValueFor("damage_threshold")
-		stun_duration = ability:GetSpecialValueFor("stun_duration")
 		target = self:GetParent():GetPlayerID()
 		
 		chd = PlayerResource:GetHeroDamageTaken(target, true)
@@ -37,10 +57,6 @@ function modifier_ernest_str3:CheckState()
 		if ignoredamage == false then
 			damagetohero = (chd - ihd) + (ccd - icd) + (ctd - itd)  
 		end
-		print("totaldamage:" .. damagetohero)
-		print("herodamage:" .. PlayerResource:GetHeroDamageTaken(target, true))
-		print("creepdamage:" .. PlayerResource:GetCreepDamageTaken(target, true))
-		print("towerdamage:" .. PlayerResource:GetTowerDamageTaken(target, true))
 
 		if damagetohero > threshold and stunned == false then
 			print("==========================================================stun applied=======================================================================")
