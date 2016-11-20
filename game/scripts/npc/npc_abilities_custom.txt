@@ -376,7 +376,7 @@
 		
 		"precache"
 		{
-			"particle"			"particles/splinter_leaf.vpcf"
+			"particle"			"particles/splinter_leaf2.vpcf"
 		}
 		
 		"AbilitySpecial"
@@ -384,7 +384,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"300"
+				"radius"				"400"
 			}
 			"02"
 			{
@@ -444,7 +444,8 @@
 		"precache"
 		{
 			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
-			"particle"			"particles/fire_ring.vpcf"
+			"particle"			"particles/ash_point.vpcf"
+			"particle"			"particles/ash_ring.vpcf"
 		}
 	
 		"AbilitySpecial"

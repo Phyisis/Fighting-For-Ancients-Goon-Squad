@@ -15,8 +15,8 @@ function ernest_int3:OnSpellStart()
 		
 	local thinker = CreateModifierThinker(caster, self, "generic_thinker", {["duration"] = duration}, target, caster:GetTeamNumber(), false)
 	
-	local ice_particle = ParticleManager:CreateParticle("particles/ice_sheet.vpcf", PATTACH_WORLDORIGIN, thinker)	
-		ParticleManager:SetParticleControl(ice_particle, 0, thinker:GetAbsOrigin() )
+	local ice_particle = ParticleManager:CreateParticle("particles/ice_sheet.vpcf", PATTACH_WORLDORIGIN, nil)	
+		ParticleManager:SetParticleControl(ice_particle, 0, target )
 	
 	if IsServer() then
 		Timers:CreateTimer(0, function()

@@ -46,8 +46,8 @@ function ernest_agi2:OnSpellStart()
 					}
 				ApplyDamage(damageTable)
 			end
-			splinter_particle = ParticleManager:CreateParticle( "particles/splinter_leaf.vpcf", PATTACH_ABSORIGIN, t )
-				ParticleManager:SetParticleControl( splinter_particle, 1, t:GetAbsOrigin():__add(Vector(0,0,200) ) )
+			splinter_particle = ParticleManager:CreateParticle( "particles/splinter_leaf2.vpcf", PATTACH_WORLDORIGIN, nil )
+				ParticleManager:SetParticleControl( splinter_particle, 0, t:GetAbsOrigin() )
 			t:CutDown(caster:GetTeamNumber())			
 		end
 	end

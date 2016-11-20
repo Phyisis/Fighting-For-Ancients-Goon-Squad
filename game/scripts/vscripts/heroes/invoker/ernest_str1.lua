@@ -11,8 +11,11 @@ function ernest_str1:OnSpellStart()
 	num = 0
 	
 	local thinker = CreateModifierThinker(caster, self, "generic_thinker", {["duration"] = duration}, target, caster:GetTeamNumber(), false)
+
 	local ash_particle = ParticleManager:CreateParticle("particles/ash_ring.vpcf", PATTACH_WORLDORIGIN, nil)
-		ParticleManager:SetParticleControl(ash_particle, 3, target)
+		ParticleManager:SetParticleControl( ash_particle, 3, thinker:GetAbsOrigin() )
+	
+	
 
 	
 	if IsServer() then
