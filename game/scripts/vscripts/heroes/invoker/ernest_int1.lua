@@ -19,7 +19,7 @@ function ernest_int1:OnSpellStart()
 	}
 	ApplyDamage(damageTable)
 	
-	local purge_particle = ParticleManager:CreateParticle("particles/generic_gameplay/generic_purge.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)	
+	local purge_particle = ParticleManager:CreateParticle("particles/generic_purge.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)	
 	ParticleManager:SetParticleControlEnt(purge_particle, 1, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), false)
 	
 	EmitSoundOn("n_creep_SatyrTrickster.Cast", target)

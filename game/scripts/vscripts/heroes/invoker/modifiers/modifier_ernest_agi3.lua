@@ -11,7 +11,7 @@ end
 
 function modifier_ernest_agi3:OnCreated(params)
 	if IsServer() then
-		EmitSoundOnLocationWithCaster( self:GetCaster():GetOrigin(), "Hero_Nevermore.Pick", self:GetCaster() )
+		EmitSoundOnLocationWithCaster( self:GetCaster():GetOrigin(), "Hero_BountyHunter.WindWalk", self:GetCaster() )
 		local hAbility = self:GetAbility()
 		local hTarget = self:GetParent()
 		local nFXIndex = ParticleManager:CreateParticle( "particles/green_fire.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
@@ -33,13 +33,16 @@ function modifier_ernest_agi3:CheckState()
 end
 
 function modifier_ernest_agi3:GetModifierInvisibilityLevel()
-	return 1
+	if self:GetElapsedTime() < 2 then
+		return self:GetElapsedTime()/2
+	else
+		return 1
+	end
 end
 
 function modifier_ernest_agi3:OnAttackLanded( params )
 	if IsServer() then
 		if params.attacker == self:GetParent() then
-			EmitSoundOnLocationWithCaster( self:GetCaster():GetOrigin(), "Hero_Nevermore.Pick", self:GetCaster() )
 			self:Destroy()
 		end
 	end
@@ -49,7 +52,6 @@ function modifier_ernest_agi3:OnAbilityExecuted( params )
 	if IsServer() then
 		if params.ability:GetAbilityName() ~= "ernest_swap" then	
 			if params.unit == self:GetParent() then
-				EmitSoundOnLocationWithCaster( self:GetCaster():GetOrigin(), "Hero_Nevermore.Pick", self:GetCaster() )
 				self:Destroy()
 			end
 		end

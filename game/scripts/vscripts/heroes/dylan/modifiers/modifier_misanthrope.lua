@@ -1,11 +1,18 @@
 modifier_misanthrope = class({})
 
+function modifier_misanthrope:DeclareFunctions()
+	
+	local funcs = {
+		MODIFIER_EVENT_ON_DEATH,
+		MODIFIER_PROPERTY_BOUNTY_CREEP_MULTIPLIER,
+	}
+
+	return funcs
+end
 
 function modifier_misanthrope:OnCreated()
 	if IsServer() then
 		print("CREATED")
-		hero = self:GetParent()
-		print(hero:GetAbsOrigin())
 	end
 end
 
@@ -14,9 +21,11 @@ function modifier_misanthrope:IsPurgable()
 end
 
 function modifier_misanthrope:OnDeath(params)
+	print("death")
 
 	if IsServer() then
-
+		
+		hero = self:GetParent()
 		target = params.unit
 		caster = self:GetParent()
 		player = PlayerResource:GetPlayer(caster:GetPlayerID())
@@ -29,9 +38,7 @@ function modifier_misanthrope:OnDeath(params)
 		killer_index = caster:entindex()
 		killed_by = params.attacker
 
-		if params.attacker == self:GetParent() and params.attacker:GetTeam() ~= params.unit:GetTeam() and not params.unit:IsIllusion() then
-
-			
+		if params.attacker == hero and params.attacker:GetTeam() ~= params.unit:GetTeam() and not params.unit:IsIllusion() and not params.unit:IsHero() then
 			gold_multiplier = self:GetAbility():GetSpecialValueFor("gold_multiplier")
 			
 			if caster:GetTeam() == DOTA_TEAM_GOODGUYS then 
@@ -52,6 +59,7 @@ function modifier_misanthrope:OnDeath(params)
 			--bonus = 10
 
 			PlayerResource:ModifyGold(caster:GetPlayerID(), bonus, false, 0)
+			print("bonus: " .. bonus)
 
 
 			-- Show the particles, player only
@@ -74,14 +82,4 @@ function modifier_misanthrope:OnDeath(params)
 
 	end
 
-end
-
-
-function modifier_misanthrope:DeclareFunctions()
-	
-	local funcs = {
-		MODIFIER_EVENT_ON_DEATH
-	}
-
-	return funcs
 end

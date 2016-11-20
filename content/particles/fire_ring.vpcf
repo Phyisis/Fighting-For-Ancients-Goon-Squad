@@ -115,6 +115,11 @@
 			m_vecOutputMax = [ 120.0, 120.0, 0.0 ]
 		},
 		{
+			_class = "C_INIT_RingWave"
+			m_nControlPointNumber = 3
+			m_flInitialRadius = 700.0
+		},
+		{
 			_class = "C_INIT_CreateFromParentParticles"
 			m_bRandomDistribution = true
 			m_flIncrement = 0.5
@@ -124,11 +129,6 @@
 			_class = "C_INIT_PositionPlaceOnGround"
 			m_flOffset = 4.0
 			m_flMaxTraceLength = 300.0
-		},
-		{
-			_class = "C_INIT_RingWave"
-			m_nControlPointNumber = 3
-			m_flInitialRadius = 700.0
 		},
 	]
 	m_Emitters = 

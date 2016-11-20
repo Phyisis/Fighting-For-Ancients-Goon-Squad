@@ -16,17 +16,10 @@ function ernest_int3:OnSpellStart()
 	local thinker = CreateModifierThinker(caster, self, "generic_thinker", {["duration"] = duration}, target, caster:GetTeamNumber(), false)
 	
 	local ice_particle = ParticleManager:CreateParticle("particles/ice_sheet.vpcf", PATTACH_WORLDORIGIN, nil)	
-		ParticleManager:SetParticleControl(ice_particle, 0, target )
+		ParticleManager:SetParticleControl(ice_particle, 10, target )
 	
 	if IsServer() then
-		Timers:CreateTimer(0, function()
-			StartSoundEventFromPosition("Hero_Invoker.IceWall.Slow", target)
-			num2 = num2 + 1
-		
-			if num1 < duration then
-				return 1
-			end
-		end)
+		StartSoundEventFromPosition("Hero_Invoker.IceWall.Slow", target)
 	end
 	
 	Timers:CreateTimer(0.1, function()

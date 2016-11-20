@@ -86,4 +86,44 @@
 		"MovementSpeed"				"280"									// Speed.
 		"MovementTurnRate"			"0.5"									// Turning rate.
 	}
+	
+	//=================================================================================================================
+	// HERO: Sprite
+	//=================================================================================================================
+	"npc_dota_hero_antimage_template"
+	{
+		"override_hero"				"npc_dota_hero_skywrath_mage"
+		"ModelScale"				"0.30000"
+		"LoadoutScale"				"1.000000"
+		"HeroGlowColor"				"194 80 163"
+		"BotImplemented"			"0"
+		
+		"AbilityLayout"				"4"
+			
+		"Ability1"					"skywrath_mage_arcane_bolt"
+		"Ability2"					"skywrath_mage_concussive_shot"
+		"Ability3"					"zoom"
+		"Ability4"					"blink_tree"
+		
+		"ArmorPhysical"				"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"40"
+		"AttackDamageMax"			"50"
+		"AttackRate"				"1.000000"
+		"AttackAnimationPoint"		"0.400000"
+		"AttackAcquisitionRange"	"800"
+		"AttackRange"				"700"
+		"ProjectileModel"			"particles/units/heroes/hero_skywrath_mage/skywrath_mage_base_attack.vpcf"
+		"ProjectileSpeed"			"200"
+		
+		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"			"19"
+		"AttributeStrengthGain"			"1.500000"
+		"AttributeBaseAgility"			"13"
+		"AttributeAgilityGain"			"1.000000"
+		"AttributeBaseIntelligence"		"27"
+		"AttributeIntelligenceGain"		"5.00000"
+		"MovementSpeed"					"325"
+		"MovementTurnRate"				"0.500000"
+	}
 }

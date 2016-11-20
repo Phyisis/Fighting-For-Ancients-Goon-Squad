@@ -8,24 +8,21 @@ function ernest_str1:OnSpellStart()
 	target = caster:GetAbsOrigin()
 	duration = self:GetSpecialValueFor("duration")
 	radius = self:GetSpecialValueFor("radius")
+	damage = self:GetSpecialValueFor("damage")/10
 	num = 0
 	
-	local thinker = CreateModifierThinker(caster, self, "generic_thinker", {["duration"] = duration}, target, caster:GetTeamNumber(), false)
+	if IsServer() then	
+		local thinker = CreateModifierThinker(caster, self, "generic_thinker", {["duration"] = duration}, target, caster:GetTeamNumber(), false)
 
-	local ash_particle = ParticleManager:CreateParticle("particles/ash_ring.vpcf", PATTACH_WORLDORIGIN, nil)
-		ParticleManager:SetParticleControl( ash_particle, 3, thinker:GetAbsOrigin() )
-	
-	
-
-	
-	if IsServer() then
+		local ash_particle = ParticleManager:CreateParticle("particles/ash_ring.vpcf", PATTACH_WORLDORIGIN, nil)
+			ParticleManager:SetParticleControl( ash_particle, 3, thinker:GetAbsOrigin() )
 		StartSoundEventFromPosition("Hero_DoomBringer.ScorchedEarthAura", target)
 	end
 	
 	Timers:CreateTimer(0.1, function()
 			
-		local outer_radius = FindUnitsInRadius(caster:GetTeamNumber(), target, nil, self:GetSpecialValueFor("radius")+200, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP, 0, 0, false)
-		local inner_radius = FindUnitsInRadius(caster:GetTeamNumber(), target, nil, self:GetSpecialValueFor("radius")-200, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP, 0, 0, false)
+		local outer_radius = FindUnitsInRadius(caster:GetTeamNumber(), target, nil, radius+200, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP, 0, 0, false)
+		local inner_radius = FindUnitsInRadius(caster:GetTeamNumber(), target, nil, radius-200, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP, 0, 0, false)
 		
 			
 		for _,v in pairs(outer_radius) do
