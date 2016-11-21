@@ -9,6 +9,11 @@ function ernest_agi2:DeclareVariables()
 	return vars
 end
 
+function ernest_agi2:GetAOERadius()
+	area_of_effect = self:GetSpecialValueFor("area_of_effect")
+	return area_of_effect
+end
+
 function ernest_agi2:OnAbilityPinged()
 	if IsServer() then
 		caster = self:GetCaster()

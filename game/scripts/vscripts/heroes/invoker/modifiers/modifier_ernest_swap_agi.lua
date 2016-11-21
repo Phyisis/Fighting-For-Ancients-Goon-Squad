@@ -35,6 +35,10 @@ function modifier_ernest_swap_agi:IsPurgable()
 	return false
 end
 
+function modifier_ernest_swap_agi:RemoveOnDeath()
+	return false
+end
+
 function modifier_ernest_swap_agi:GetModifierMoveSpeedBonus_Constant()
 	if IsServer() then
 		caster = self:GetParent()

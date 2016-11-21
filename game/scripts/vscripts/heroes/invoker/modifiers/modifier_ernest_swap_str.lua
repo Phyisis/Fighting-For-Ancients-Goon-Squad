@@ -36,6 +36,10 @@ function modifier_ernest_swap_str:IsPurgable()
 	return false
 end
 
+function modifier_ernest_swap_str:RemoveOnDeath()
+	return false
+end
+
 function modifier_ernest_swap_str:GetModifierConstantHealthRegen()
 	caster = self:GetParent()
 	strmod = caster:GetStrength() - caster:GetBaseStrength()

@@ -253,7 +253,7 @@
 		"ScriptFile"			"heroes/invoker/ernest_int2.lua"
 		
 		
-		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"MaxLevel"						"7"
 		
 		"AbilityCastRange"              "0"
@@ -300,7 +300,7 @@
 		"AbilityTextureName" 	"ernest_int3"
 		"ScriptFile"			"heroes/invoker/ernest_int3.lua"
 		
-		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"MaxLevel"						"7"
 		
 		"AbilityCastRange"              "1000"
@@ -385,7 +385,6 @@
 		"AbilityCastPoint"				"0.3"
 		"AbilityCooldown"				"20.0"
 		"AbilityManaCost"				"140 150 160 170 180 190 200"
-		"AoERadius"						"%area_of_effect"
 		
 		"precache"
 		{

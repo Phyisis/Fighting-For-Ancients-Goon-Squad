@@ -117,4 +117,3 @@ function ernest_swap:OnSpellStart()
 
 	caster:CalculateStatBonus()
 end
-

@@ -79,3 +79,8 @@ function ernest_int2:OnSpellStart()
 	end)
 		
 end
+
+function ernest_int2:GetAOERadius()
+	radius = self:GetSpecialValueFor("radius")
+	return radius
+end

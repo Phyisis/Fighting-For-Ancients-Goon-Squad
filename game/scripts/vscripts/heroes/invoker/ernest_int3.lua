@@ -70,3 +70,8 @@ function ernest_int3:OnSpellStart()
 	end)
 		
 end
+
+function ernest_int3:GetAOERadius()
+	radius = self:GetSpecialValueFor("radius")
+	return radius
+end

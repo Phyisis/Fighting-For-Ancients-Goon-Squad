@@ -36,6 +36,10 @@ function modifier_ernest_swap_int:IsPurgable()
 	return false
 end
 
+function modifier_ernest_swap_int:RemoveOnDeath()
+	return false
+end
+
 function modifier_ernest_swap_int:GetModifierConstantManaRegen()
 	caster = self:GetParent()
 	intmod = caster:GetIntellect() - caster:GetBaseIntellect()
