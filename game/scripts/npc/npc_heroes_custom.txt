@@ -10,14 +10,14 @@
 	{
 		"override_hero"				"npc_dota_hero_antimage"
 
-		//"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
 
-		//"AttributeBaseStrength"		"18"	
-		"AttributeStrengthGain"		"2.8"	
-		//"AttributeBaseIntelligence"	"25"	
-		"AttributeIntelligenceGain"	"1.75"	
-		//"AttributeBaseAgility"		"27"	
-		"AttributeAgilityGain"		"1.2"
+		"AttributeBaseStrength"		"22"	
+		"AttributeStrengthGain"		"2.0"	
+		"AttributeBaseIntelligence"	"18"	
+		"AttributeIntelligenceGain"	"1.5"	
+		"AttributeBaseAgility"		"20"	
+		"AttributeAgilityGain"		"2.5"
 
 		"Ability1"					"gaggle_of_jews"
 		"Ability2"					"jew_claw"
@@ -40,19 +40,13 @@
 		"Ability1"					"ernest_int1"
 		"Ability2"					"ernest_int2"
 		"Ability3"					"ernest_int3"
-		"Ability4"					"ernest_swap"
-		"Ability5"					""
-		"Ability6"					""
-		"Ability7"					""
-		"Ability8"					""
-		"Ability9"					""
-		"Ability10"					""
-		"Ability11"					""
-		"Ability12"					""
-		"Ability13"					""
-		"Ability14"					""
-		"Ability15"					""
-		"Ability16"					""
+		"Ability4"					"ernest_agi1"
+		"Ability5"					"ernest_agi2"
+		"Ability6"					"ernest_agi3"
+		"Ability7"					"ernest_str1"
+		"Ability8"					"ernest_str2"
+		"Ability9"					"ernest_str3"
+		"Ability10"					"ernest_swap"
 		
 		
 
@@ -102,7 +96,7 @@
 			
 		"Ability1"					"skywrath_mage_arcane_bolt"
 		"Ability2"					"skywrath_mage_concussive_shot"
-		"Ability3"					"zoom"
+		"Ability3"					"spritely_speed"
 		"Ability4"					"blink_tree"
 		
 		"ArmorPhysical"				"0"

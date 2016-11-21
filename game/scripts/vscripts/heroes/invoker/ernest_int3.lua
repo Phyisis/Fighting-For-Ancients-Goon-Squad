@@ -17,6 +17,7 @@ function ernest_int3:OnSpellStart()
 	
 	local ice_particle = ParticleManager:CreateParticle("particles/ice_sheet.vpcf", PATTACH_WORLDORIGIN, nil)	
 		ParticleManager:SetParticleControl(ice_particle, 10, target )
+		ParticleManager:SetParticleControl(ice_particle, 11, Vector(radius, radius, 0) )
 	
 	if IsServer() then
 		StartSoundEventFromPosition("Hero_Invoker.IceWall.Slow", target)

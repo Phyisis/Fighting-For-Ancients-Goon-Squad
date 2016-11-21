@@ -70,7 +70,7 @@ function FAGSDota:EzDebug()
 	SendToServerConsole("dota_dev player_givegold 99999")
 
 	SendToServerConsole("dota_create_item travel 2")
-	SendToServerConsole("dota_create_item rapier")
+	SendToServerConsole("dota_create_item skadi")
 	SendToServerConsole("dota_create_item rapier")
 	SendToServerConsole("dota_create_item rapier")
 	SendToServerConsole("dota_create_item heart")
