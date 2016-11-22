@@ -5,6 +5,9 @@ function ernest_str2:OnSpellStart()
 	duration = self:GetSpecialValueFor("duration")
 	num = 0
 	
+	local grav_particle = ParticleManager:CreateParticle("particles/gravity.vpcf", PATTACH_OVERHEAD_FOLLOW, caster)	
+		ParticleManager:SetParticleControl(grav_particle, 0, caster:GetAbsOrigin())
+	
 	Timers:CreateTimer(0, function()
 		radius = self:GetSpecialValueFor("radius")
 		point = caster:GetAbsOrigin()
@@ -25,5 +28,9 @@ function ernest_str2:OnSpellStart()
 		if num < duration then
 			return .033
 		end
+	end)
+	
+	Timers:CreateTimer(duration, function()
+		ParticleManager:DestroyParticle(grav_particle, false)
 	end)
 end
