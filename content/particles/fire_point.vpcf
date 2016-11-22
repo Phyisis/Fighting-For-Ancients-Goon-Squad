@@ -65,13 +65,18 @@
 	m_Initializers = 
 	[
 		{
+			_class = "C_INIT_RingWave"
+			m_nControlPointNumber = 3
+			m_flInitialRadius = 700.0
+		},
+		{
 			_class = "C_INIT_RandomLifeTime"
 			m_fLifetimeMax = 3.0
 			m_fLifetimeMin = 2.0
 		},
 		{
 			_class = "C_INIT_RandomRadius"
-			m_flRadiusMax = 40.0
+			m_flRadiusMax = 50.0
 			m_flRadiusMin = 20.0
 		},
 		{
@@ -89,8 +94,8 @@
 		},
 		{
 			_class = "C_INIT_PositionOffset"
-			m_OffsetMin = [ -120.0, -120.0, 0.0 ]
-			m_OffsetMax = [ 120.0, 120.0, 0.0 ]
+			m_OffsetMin = [ -100.0, -100.0, 200.0 ]
+			m_OffsetMax = [ 100.0, 100.0, 200.0 ]
 		},
 		{
 			_class = "C_INIT_RandomSequence"
@@ -112,19 +117,19 @@
 			_class = "C_INIT_CreateFromParentParticles"
 			m_bRandomDistribution = true
 			m_flIncrement = 0.5
+			m_bDisableOperator = true
 		},
 		{
-			_class = "C_INIT_RingWave"
-			m_nControlPointNumber = 3
-			m_flInitialRadius = 1.0
-			m_bEvenDistribution = true
+			_class = "C_INIT_PositionPlaceOnGround"
+			m_flOffset = 5.0
+			m_flMaxTraceLength = 500.0
 		},
 	]
 	m_Emitters = 
 	[
 		{
 			_class = "C_OP_ContinuousEmitter"
-			m_flEmitRate = 200.0
+			m_flEmitRate = 500.0
 		},
 	]
 }

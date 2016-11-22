@@ -56,15 +56,17 @@
 			m_nSequenceMax = 1
 		},
 		{
-			_class = "C_INIT_CreateSpiralSphere"
+			_class = "C_INIT_RingWave"
+			m_nControlPointNumber = 3
+			m_flInitialRadius = 700.0
 		},
 		{
 			_class = "C_INIT_RandomRotation"
 		},
 		{
 			_class = "C_INIT_PositionOffset"
-			m_OffsetMin = [ -64.0, -64.0, 500.0 ]
-			m_OffsetMax = [ 64.0, 64.0, 500.0 ]
+			m_OffsetMin = [ -64.0, -64.0, 200.0 ]
+			m_OffsetMax = [ 64.0, 64.0, 200.0 ]
 			m_nControlPointNumber = 4
 			m_bLocalCoords = true
 		},
@@ -86,6 +88,8 @@
 		},
 		{
 			_class = "C_INIT_PositionPlaceOnGround"
+			m_flOffset = 4.0
+			m_flMaxTraceLength = 500.0
 		},
 	]
 	m_Emitters = 

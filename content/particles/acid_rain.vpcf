@@ -19,7 +19,7 @@
 	[
 		{
 			_class = "C_OP_BasicMovement"
-			m_Gravity = [ 0.0, 0.0, -1000.0 ]
+			m_Gravity = [ 0.0, 0.0, -2000.0 ]
 			m_fDrag = 0.05
 		},
 		{
@@ -72,8 +72,8 @@
 		},
 		{
 			_class = "C_INIT_RandomAlpha"
-			m_nAlphaMin = 80
-			m_nAlphaMax = 150
+			m_nAlphaMin = 120
+			m_nAlphaMax = 200
 		},
 		{
 			_class = "C_INIT_RandomSequence"
@@ -87,16 +87,27 @@
 			_class = "C_INIT_RandomYawFlip"
 		},
 		{
+			_class = "C_INIT_RingWave"
+			m_nControlPointNumber = 10
+			m_flInitialRadius = 1.0
+		},
+		{
 			_class = "C_INIT_PositionOffset"
-			m_OffsetMax = [ 400.0, 400.0, 600.0 ]
-			m_OffsetMin = [ -400.0, -400.0, 400.0 ]
+			m_OffsetMax = [ 0.0, 0.0, 600.0 ]
+			m_OffsetMin = [ 0.0, 0.0, 400.0 ]
 			m_bLocalCoords = true
 			m_nControlPointNumber = 3
 		},
 		{
-			_class = "C_INIT_RingWave"
-			m_nControlPointNumber = 2
-			m_flInitialRadius = 100.0
+			_class = "C_INIT_InheritFromParentParticles"
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_INIT_PositionWarp"
+			m_vecWarpMin = [ 0.0, 0.0, 1.0 ]
+			m_vecWarpMax = [ 100.0, 100.0, 1.0 ]
+			m_nScaleControlPointNumber = 11
+			m_nControlPointNumber = 10
 		},
 	]
 	m_Emitters = 

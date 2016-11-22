@@ -42,6 +42,7 @@
 		{
 			_class = "C_OP_PositionLock"
 			m_nControlPointNumber = 1
+			m_bDisableOperator = true
 		},
 	]
 	m_Initializers = 
@@ -68,21 +69,32 @@
 		},
 		{
 			_class = "C_INIT_PositionOffset"
-			m_OffsetMax = [ 400.0, 400.0, 10.0 ]
-			m_OffsetMin = [ -400.0, -400.0, 10.0 ]
+			m_OffsetMax = [ 0.0, 0.0, 300.0 ]
+			m_OffsetMin = [ 0.0, 0.0, 300.0 ]
 		},
 		{
-			_class = "C_INIT_CreateWithinSphere"
-			m_fRadiusMax = 5.0
-			m_fRadiusMin = 5.0
+			_class = "C_INIT_RingWave"
 			m_nControlPointNumber = 10
+			m_flInitialRadius = 1.0
+		},
+		{
+			_class = "C_INIT_PositionWarp"
+			m_vecWarpMin = [ 0.0, 0.0, 0.0 ]
+			m_vecWarpMax = [ 100.0, 100.0, 1.0 ]
+			m_nScaleControlPointNumber = 11
+			m_nControlPointNumber = 10
+		},
+		{
+			_class = "C_INIT_PositionPlaceOnGround"
+			m_flOffset = 4.0
+			m_flMaxTraceLength = 500.0
 		},
 	]
 	m_Emitters = 
 	[
 		{
 			_class = "C_OP_ContinuousEmitter"
-			m_flEmitRate = 200.0
+			m_flEmitRate = 2000.0
 			m_flEmissionDuration = -1.0
 		},
 	]
@@ -92,4 +104,5 @@
 			m_ChildRef = resource:"particles/acid_rain.vpcf"
 		},
 	]
+	m_nMaxParticles = 10000
 }

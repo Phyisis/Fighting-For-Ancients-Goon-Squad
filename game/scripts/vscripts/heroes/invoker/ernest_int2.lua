@@ -8,7 +8,6 @@ function ernest_int2:OnSpellStart()
 	target = caster:GetCursorPosition()
 	duration = self:GetSpecialValueFor("duration")
 	radius = self:GetSpecialValueFor("radius")
-	one = Vector(radius,0,0)
 	num1 = 0
 	num2 = 0
 	
@@ -17,8 +16,8 @@ function ernest_int2:OnSpellStart()
 	local thinker = CreateModifierThinker(caster, self, "generic_thinker", {["duration"] = duration}, target, caster:GetTeamNumber(), false)
 	
 	local rain_particle = ParticleManager:CreateParticle("particles/acid_ripple.vpcf", PATTACH_WORLDORIGIN, nil)	
-		ParticleManager:SetParticleControl(rain_particle, 10, target:__add(Vector(0,0,10)))
-		ParticleManager:SetParticleControl(rain_particle, 2, target:__add(Vector(0,0,200)))
+		ParticleManager:SetParticleControl(rain_particle, 10, target)
+		ParticleManager:SetParticleControl(rain_particle, 11, Vector(radius/100, radius/100, 1))
 	
 	if IsServer() then
 		StartSoundEventFromPosition("lightning.thunder", target)

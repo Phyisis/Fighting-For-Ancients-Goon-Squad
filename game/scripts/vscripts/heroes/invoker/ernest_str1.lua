@@ -12,12 +12,14 @@ function ernest_str1:OnSpellStart()
 	num = 0
 	
 	if IsServer() then	
-		local thinker = CreateModifierThinker(caster, self, "generic_thinker", {["duration"] = duration}, target, caster:GetTeamNumber(), false)
+		thinker = CreateModifierThinker(caster, self, "generic_thinker", {["duration"] = duration}, target, caster:GetTeamNumber(), false)
 
-		local ash_particle = ParticleManager:CreateParticle("particles/ash_ring.vpcf", PATTACH_WORLDORIGIN, nil)
-			ParticleManager:SetParticleControl( ash_particle, 3, thinker:GetAbsOrigin() )
+		
 		StartSoundEventFromPosition("Hero_DoomBringer.ScorchedEarthAura", target)
 	end
+	
+	local ash_particle = ParticleManager:CreateParticle("particles/ash_ring.vpcf", PATTACH_WORLDORIGIN, nil)
+			ParticleManager:SetParticleControl( ash_particle, 3, thinker:GetAbsOrigin() )
 	
 	Timers:CreateTimer(0.1, function()
 			
@@ -79,13 +81,14 @@ function ernest_str1:OnSpellStart()
 			StopSoundEvent("Hero_DoomBringer.ScorchedEarthAura", nil)
 		end
 		
+		ParticleManager:DestroyParticle(ash_particle, false)
+		
 		local all_heroes = HeroList:GetAllHeroes()
 		
 		for _,v in pairs(all_heroes) do
 			v:RemoveModifierByName("modifier_ernest_str1")
 		end
 
-		ParticleManager:DestroyParticle(ash_particle, false)
-	end)
 		
+	end)		
 end
