@@ -94,8 +94,6 @@
 			_class = "C_INIT_PositionOffset"
 			m_OffsetMin = [ -40.0, 0.0, 20.0 ]
 			m_OffsetMax = [ -40.0, 0.0, 20.0 ]
-			m_nControlPointNumber = 2
-			m_bLocalCoords = true
 		},
 	]
 	m_Emitters = 

@@ -7,7 +7,7 @@ function modifier_water_fiend:DeclareFunctions()
 		MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
 		MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
 		MODIFIER_PROPERTY_EVASION_CONSTANT,
-		MODIFIER_EVENT_ON_UNIT_MOVED,
+		MODIFIER_PROPERTY_ATTACK_RANGE_BONUS,
 	}
 	return funcs
 end
@@ -19,6 +19,7 @@ function modifier_water_fiend:DeclareVariables()
 		hp_regen,
 		mana_regen,
 		evasion,
+		bonus_range,
 	}
 	return vars
 end
@@ -29,6 +30,7 @@ function modifier_water_fiend:OnCreated(keys)
 	hp_regen = keys.hp_regen
 	mana_regen = keys.mana_regen
 	evasion = keys.evasion
+	bonus_range = keys.bonus_range
 	
 	if IsServer() then
 		water_particle = ParticleManager:CreateParticle( "particles/water_buff5.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
@@ -38,14 +40,14 @@ end
 
 function modifier_water_fiend:GetModifierDamageOutgoing_Percentage()
 	if IsServer() then
-		return damage
+		return math.floor(damage)
 	end
 end
 
 function modifier_water_fiend:GetModifierMoveSpeedBonus_Percentage()
 	if IsServer() then
 		--speed = ability:GetSpecialValueFor("speed")
-		return speed
+		return math.floor(speed)
 	end
 end
 
@@ -70,6 +72,16 @@ function modifier_water_fiend:GetModifierEvasion_Constant()
 	end
 end
 
+function modifier_water_fiend:GetModifierAttackRangeBonus()
+	if IsServer() then
+		if self:GetElapsedTime()*100 < bonus_range then
+			return math.floor(self:GetElapsedTime()*100)
+		else
+			return math.floor(bonus_range)
+		end
+	end
+end
+
 function modifier_water_fiend:GetModifierUnitStatsNeedsRefresh()
 	return true
 end
@@ -84,6 +96,14 @@ end
 
 function modifier_water_fiend:IsDebuff()
 	return false
+end
+
+function modifier_water_fiend:AllowIllusionDuplicate()
+	return false
+end
+
+function modifier_water_fiend:RemoveOnDeath()
+	return true
 end
 
 function modifier_water_fiend:OnDestroy()
