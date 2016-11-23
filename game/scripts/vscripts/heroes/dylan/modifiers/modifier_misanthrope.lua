@@ -4,7 +4,6 @@ function modifier_misanthrope:DeclareFunctions()
 	
 	local funcs = {
 		MODIFIER_EVENT_ON_DEATH,
-		MODIFIER_PROPERTY_BOUNTY_CREEP_MULTIPLIER,
 	}
 
 	return funcs

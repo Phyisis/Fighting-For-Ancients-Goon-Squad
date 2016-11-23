@@ -14,7 +14,7 @@ function modifier_ernest_agi3:OnCreated(params)
 		EmitSoundOnLocationWithCaster( self:GetCaster():GetOrigin(), "Hero_BountyHunter.WindWalk", self:GetCaster() )
 		local hAbility = self:GetAbility()
 		local hTarget = self:GetParent()
-		local nFXIndex = ParticleManager:CreateParticle( "particles/green_fire.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
+		local nFXIndex = ParticleManager:CreateParticle( "particles/green_fire.vpcf", PATTACH_OVERHEAD_FOLLOW, self:GetCaster() )
 			ParticleManager:SetParticleControl( nFXIndex, 0, hTarget:GetAbsOrigin() )
 			ParticleManager:SetParticleControl( nFXIndex, 15, Vector( 133, 0, 162 ) )
 	end
