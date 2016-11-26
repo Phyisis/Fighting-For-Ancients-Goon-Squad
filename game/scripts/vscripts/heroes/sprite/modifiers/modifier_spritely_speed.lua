@@ -19,11 +19,11 @@ function modifier_spritely_speed:GetModifierMoveSpeedBonus_Percentage()
 end
 
 function modifier_spritely_speed:GetModifierMoveSpeed_Max()
-    return 1000
+    return 1200
 end
 
 function modifier_spritely_speed:GetModifierMoveSpeed_Limit()
-    return 1000
+    return 1200
 end
 
 

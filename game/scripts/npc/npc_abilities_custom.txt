@@ -192,7 +192,7 @@
 		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"MaxLevel"						"4"
-		"LevelsBetweenUpgrades"			"5"
+		"LevelsBetweenUpgrades"			"7"
 		"RequiredLevel"					"4"
 		
 		"AbilityCastPoint"				"0.1"
@@ -704,7 +704,7 @@
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"50 125 200 275"
+		"AbilityDamage"					"100 150 200 250"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -768,12 +768,12 @@
 			"02"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"damage_min"					"2 2.5 3 3.5"
+				"damage_min"					"2.5"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"damage_max"					"2 2.5 3 3.5"
+				"damage_max"					"2.5"
 			}
 			"04"
 			{
@@ -803,7 +803,7 @@
 			"09"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"projectile_speed"					"1150"
+				"projectile_speed"				"1150"
 			}
 		}
 	}
@@ -838,7 +838,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"agi_damage"					"2 2.5 3 3.5"
+				"agi_damage"					"2.5"
 			}
 			"02"
 			{
@@ -865,6 +865,9 @@
 		"AbilityTextureName" 	"water_fiend"
 
 		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"4"
+		"LevelsBetweenUpgrades"			"3"
+		"RequiredLevel"					"3"
 
 		"precache"
 		{
@@ -877,12 +880,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"50 55 60 65"
+				"damage"			"40 45 50 55"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"speed"				"15 30 45 60"
+				"speed"				"20 40 60 80"
 			}
 			"03"
 			{
@@ -897,12 +900,12 @@
 			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"evasion"			"5 10 15 20"
+				"evasion"			"10 15 20 25"
 			}
 			"06"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_range"		"300 400 500 600"
+				"bonus_range"		"200 300 400 500"
 			}
 		}
 	}
@@ -928,7 +931,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"40 70 100"
+				"damage"			"50 125 200"
 			}
 			"02"
 			{

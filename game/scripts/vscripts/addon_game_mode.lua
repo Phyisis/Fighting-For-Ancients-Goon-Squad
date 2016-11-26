@@ -1,6 +1,7 @@
 -- Generated from template
 
 require('libraries/timers')
+require('libraries/playertables')
 
 if FAGSDota == nil then
 	FAGSDota = class({})

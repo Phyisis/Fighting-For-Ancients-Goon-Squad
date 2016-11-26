@@ -198,7 +198,7 @@
 		// Attack
 		//-------------------------------------------------------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"13"									// Damage range min.
+		"AttackDamageMin"			"17"									// Damage range min.
 		"AttackDamageMax"			"23"									// Damage range max.
 		"AttackRate"				"1.6"									// Speed of attack.
 		"AttackAnimationPoint"		"0.5"									// Normalized time in animation cycle to attack.
@@ -209,16 +209,16 @@
 		// Attributes
 		//-------------------------------------------------------------------------------------------------------------
 		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
-		"AttributeBaseStrength"		"19"									// Base strength
+		"AttributeBaseStrength"		"23"									// Base strength
 		"AttributeStrengthGain"		"2.0"									// Strength bonus per level.
-		"AttributeBaseIntelligence"	"17"									// Base intelligence
+		"AttributeBaseIntelligence"	"20"									// Base intelligence
 		"AttributeIntelligenceGain"	"1.5"									// Intelligence bonus per level.
 		"AttributeBaseAgility"		"20"									// Base agility
-		"AttributeAgilityGain"		"3.0"									// Agility bonus per level.
+		"AttributeAgilityGain"		"2.0"									// Agility bonus per level.
 
 		// Movement
 		//-------------------------------------------------------------------------------------------------------------
-		"MovementSpeed"				"280"									// Speed.
+		"MovementSpeed"				"270"									// Speed.
 		"MovementTurnRate"			"0.6"									// Turning rate.
 	}
 	

@@ -40,9 +40,7 @@ function modifier_ernest_swap_agi:RemoveOnDeath()
 end
 
 function modifier_ernest_swap_agi:GetModifierMoveSpeedBonus_Constant()
-	if IsServer() then
-		caster = self:GetParent()
-		agimod = caster:GetAgility() - caster:GetBaseAgility()
-		return agimod/2
-	end
+	caster = self:GetParent()
+	agimod = caster:GetAgility() - caster:GetBaseAgility()
+	return agimod/2
 end

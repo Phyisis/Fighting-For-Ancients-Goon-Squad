@@ -25,13 +25,6 @@ function modifier_water_fiend:DeclareVariables()
 end
 
 function modifier_water_fiend:OnCreated(keys)
-	damage = keys.damage
-	speed = keys.speed
-	hp_regen = keys.hp_regen
-	mana_regen = keys.mana_regen
-	evasion = keys.evasion
-	bonus_range = keys.bonus_range
-	
 	if IsServer() then
 		water_particle = ParticleManager:CreateParticle( "particles/water_buff5.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
 			ParticleManager:SetParticleControl( water_particle, 0, self:GetParent():GetAbsOrigin())
@@ -39,47 +32,40 @@ function modifier_water_fiend:OnCreated(keys)
 end
 
 function modifier_water_fiend:GetModifierDamageOutgoing_Percentage()
-	if IsServer() then
-		return math.floor(damage)
-	end
+	damage = self:GetAbility():GetSpecialValueFor("damage")
+	return math.floor(damage)
 end
 
 function modifier_water_fiend:GetModifierMoveSpeedBonus_Percentage()
-	if IsServer() then
-		--speed = ability:GetSpecialValueFor("speed")
-		return math.floor(speed)
-	end
+	speed = self:GetAbility():GetSpecialValueFor("speed")
+	return math.floor(speed)
 end
 
 function modifier_water_fiend:GetModifierConstantHealthRegen()
-	if IsServer() then
-		--hp_regen = ability:GetSpecialValueFor("hp_regen")
-		return hp_regen
-	end
+	hp_regen = self:GetAbility():GetSpecialValueFor("hp_regen")
+	return hp_regen
 end
 
 function modifier_water_fiend:GetModifierConstantManaRegen()
-	if IsServer() then
-		--mana_regen = ability:GetSpecialValueFor("mana_regen")
-		return mana_regen
-	end
+	mana_regen = self:GetAbility():GetSpecialValueFor("mana_regen")
+	return mana_regen
 end
 
-function modifier_water_fiend:GetModifierEvasion_Constant()
-	if IsServer() then
-		--evasion = ability:GetSpecialValueFor("evasion")
-		return evasion
-	end
+function modifier_water_fiend:GetModifierEvasion_Constant(args)
+	evasion = self:GetAbility():GetSpecialValueFor("evasion")
+	return evasion
 end
 
-function modifier_water_fiend:GetModifierAttackRangeBonus()
-	if IsServer() then
-		if self:GetElapsedTime()*100 < bonus_range then
-			return math.floor(self:GetElapsedTime()*100)
-		else
-			return math.floor(bonus_range)
-		end
-	end
+function modifier_water_fiend:GetModifierAttackRangeBonus(args)
+	bonus_range = self:GetAbility():GetSpecialValueFor("bonus_range")
+	return math.floor(bonus_range)
+end
+
+function modifier_water_fiend:CheckState()
+	local state = {
+		[MODIFIER_STATE_CANNOT_MISS] = true
+	}
+	return state
 end
 
 function modifier_water_fiend:GetModifierUnitStatsNeedsRefresh()
