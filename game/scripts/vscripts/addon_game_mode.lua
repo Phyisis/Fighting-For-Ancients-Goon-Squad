@@ -18,6 +18,9 @@ function Precache( context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_techies.vsndevts", context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_tinker.vsndevts", context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_pugna.vsndevts", context )
+	PrecacheResource( "particle", "particles/nuke/mini_nuke.vpcf", context )
+	PrecacheResource( "particle", "particles/nuke/mini_nuke_fallout1.vpcf", context )
+	PrecacheResource( "particle", "particles/nuke/nuke.vpcf", context )
 end
 
 -- Create the game mode when we activate

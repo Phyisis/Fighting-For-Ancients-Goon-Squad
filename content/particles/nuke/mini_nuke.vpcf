@@ -6,10 +6,6 @@
 	m_Children = 
 	[
 		{
-			m_ChildRef = resource:"particles/nuke/mini_nuke_ash.vpcf"
-			m_bDisableChild = true
-		},
-		{
 			m_ChildRef = resource:"particles/nuke/mini_nuke_base.vpcf"
 		},
 	]

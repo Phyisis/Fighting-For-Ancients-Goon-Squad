@@ -66,8 +66,5 @@
 		{
 			m_ChildRef = resource:"particles/nuke/mini_nuke_death_streak_hard.vpcf"
 		},
-		{
-			m_ChildRef = resource:"particles/nuke/mini_nuke_fallout.vpcf"
-		},
 	]
 }

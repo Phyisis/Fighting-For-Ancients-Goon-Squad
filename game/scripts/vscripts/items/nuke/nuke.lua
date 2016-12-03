@@ -98,6 +98,9 @@ function item_nuke:OnProjectileHit( hTarget, vLocation )
 	
 	local nuke_particle = ParticleManager:CreateParticle("particles/nuke/mini_nuke.vpcf", PATTACH_ABSORIGIN, thinker)	
 		ParticleManager:SetParticleControl(nuke_particle, 0, vPoint)
+	local fallout_particle = ParticleManager:CreateParticle("particles/nuke/mini_nuke_fallout1.vpcf", PATTACH_ABSORIGIN, thinker)	
+		ParticleManager:SetParticleControl(fallout_particle, 0, vPoint)
+		
 	hCaster:EmitSound("Hero_Techies.Suicide")
 	
 	GridNav:DestroyTreesAroundPoint(vPoint, self:GetSpecialValueFor("radius"), true)
