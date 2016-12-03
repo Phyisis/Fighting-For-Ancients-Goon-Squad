@@ -16,8 +16,11 @@
 		"precache"
 		{
 			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_tinker.vsndevts"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_pugna.vsndevts"
 			"particle"		"particles/nuke/mini_nuke.vpcf"
 			"particle"		"particles/nuke/mini_nuke_fallout.vpcf"
+			"particle"		"particles/nuke/nuke.vpcf"
 		}
 		
 		"AbilitySpecial"
@@ -61,6 +64,11 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_damage"			"60"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"projectile_speed"		"1600"
 			}
 		}
 		

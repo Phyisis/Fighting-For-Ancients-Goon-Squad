@@ -16,6 +16,8 @@ function Precache( context )
 			PrecacheResource( "particle_folder", "particles/folder", context )
 	]]
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_techies.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_tinker.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_pugna.vsndevts", context )
 end
 
 -- Create the game mode when we activate
