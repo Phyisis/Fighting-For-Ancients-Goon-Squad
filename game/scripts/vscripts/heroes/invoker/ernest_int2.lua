@@ -9,7 +9,6 @@ function ernest_int2:OnSpellStart()
 	duration = self:GetSpecialValueFor("duration")
 	radius = self:GetSpecialValueFor("radius")
 	num1 = 0
-	num2 = 0
 	
 	AddFOWViewer(caster:GetTeamNumber(), target, radius, duration, false)
 	
@@ -32,12 +31,12 @@ function ernest_int2:OnSpellStart()
 			local damageTable = {
 				victim = v,
 				attacker = caster,
-				damage = self:GetSpecialValueFor("flat_damage")/10 + v:GetHealth() * self:GetSpecialValueFor("percent_damage")/1000 ,
+				damage = self:GetSpecialValueFor("flat_damage")/10 + v:GetMaxHealth() * self:GetSpecialValueFor("percent_damage")/1000 ,
 				damage_type = DAMAGE_TYPE_MAGICAL,
 			}
 			ApplyDamage(damageTable)
 			
-			v:AddNewModifier(caster, nil, "modifier_ernest_int2", nil)
+			v:AddNewModifier(caster, self, "modifier_ernest_int2", nil)
 		end
 		
 		local all_heroes = HeroList:GetAllHeroes()

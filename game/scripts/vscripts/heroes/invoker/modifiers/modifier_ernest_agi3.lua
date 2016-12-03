@@ -22,7 +22,7 @@ end
 
 function modifier_ernest_agi3:CheckState()
 	local invis = false
-	if self:GetElapsedTime() > 2 then 
+	if self:GetElapsedTime() > self:GetAbility():GetSpecialValueFor("fade_time") then 
 		invis = true 
 	end
 	
@@ -33,8 +33,8 @@ function modifier_ernest_agi3:CheckState()
 end
 
 function modifier_ernest_agi3:GetModifierInvisibilityLevel()
-	if self:GetElapsedTime() < 2 then
-		return self:GetElapsedTime()/2
+	if self:GetElapsedTime() < self:GetAbility():GetSpecialValueFor("fade_time") then
+		return self:GetElapsedTime()/self:GetAbility():GetSpecialValueFor("fade_time")
 	else
 		return 1
 	end

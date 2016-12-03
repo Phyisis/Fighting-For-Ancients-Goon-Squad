@@ -1,0 +1,116 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_flConstantRadius = 90.0
+	m_flConstantLifespan = 10.0
+	m_ConstantColor = [ 192, 192, 192, 255 ]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
+			m_nOrientationType = 2
+			m_hTexture = resource:"materials/models/particle/crater_color.vtex"
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_BasicMovement"
+		},
+		{
+			_class = "C_OP_FadeInSimple"
+			m_flFadeInTime = 0.1
+		},
+		{
+			_class = "C_OP_ColorInterpolate"
+			m_flFadeEndTime = 25.0
+			m_ColorFade = [ 69, 61, 57, 255 ]
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_EndCapTimedDecay"
+			m_flDecayTime = 5.0
+		},
+		{
+			_class = "C_OP_LerpEndCapScalar"
+			m_flLerpTime = 5.0
+			m_nFieldOutput = 16
+			m_flOutput = 0.0
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flEndTime = 0.2
+			m_flStartScale = 10.0
+			m_flEndScale = 15.0
+		},
+		{
+			_class = "C_OP_StopAfterCPDuration"
+			m_flDuration = 60.0
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 10.0
+			m_fLifetimeMax = 10.0
+		},
+		{
+			_class = "C_INIT_InheritFromParentParticles"
+			m_nFieldOutput = 21
+		},
+		{
+			_class = "C_INIT_RandomSequence"
+			m_nSequenceMax = 1
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin = [ 0.0, 0.0, 600.0 ]
+			m_OffsetMax = [ 0.0, 0.0, 600.0 ]
+			m_nControlPointNumber = 4
+			m_bLocalCoords = true
+		},
+		{
+			_class = "C_INIT_RandomAlpha"
+		},
+		{
+			_class = "C_INIT_RemapCPtoScalar"
+			m_flOutputMax = 15.0
+			m_nFieldOutput = 1
+			m_flInputMax = 20.0
+			m_nCPInput = 1
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin = [ 134, 99, 99, 255 ]
+			m_ColorMax = [ 39, 37, 35, 255 ]
+			m_nTintCP = 2
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+			m_fRadiusMin = -64.0
+			m_vecDistanceBias = [ 1.0, 1.0, 0.0 ]
+		},
+		{
+			_class = "C_INIT_PositionPlaceOnGround"
+			m_flOffset = 4.0
+			m_flMaxTraceLength = 1000.0
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 1
+		},
+	]
+	m_flMaxDrawDistance = 10000.0
+	m_flStartFadeDistance = 20000.0
+	m_nMaxParticles = 2000
+}

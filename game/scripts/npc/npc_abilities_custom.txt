@@ -420,7 +420,7 @@
 		"MaxLevel"						"7"
 		
 		"AbilityCastPoint"				"0.3"
-		"AbilityCooldown"				"60 55 50 45 40 35 30"
+		"AbilityCooldown"				"70 60 50 40 30 20 10"
 		"AbilityManaCost"				"50.0"
 		
 		"precache"
@@ -440,7 +440,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"fade_time"			"2"
+				"fade_time"			"3.2 1.6 0.8 0.4 0.2 0.1 0"
 			}
 		}
 	}
@@ -691,7 +691,6 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"FightRecapLevel"				"1"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -700,7 +699,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"10.0"
+		"AbilityCooldown"				"14.0"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
@@ -708,7 +707,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"120 140 160 180"
+		"AbilityManaCost"				"120 145 170 195"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -726,88 +725,7 @@
 			}
 		}
 	}
-	
-	"morphling_adaptive_strike"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"FightRecapLevel"				"1"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"900 1000 1100 1200"
-		"AbilityCastPoint"				"0.25"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"10"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 120 140 160"		
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityModifierSupportValue"	"0.3"	// Primarily about the damage
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"damage_base"					"0.0 0.0 0.0 0.0"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"damage_min"					"2.5"
-			}
-			"03"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"damage_max"					"2.5"
-			}
-			"04"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"stun_min"						"0.1"
-			}
-			"05"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"stun_max"						"0.1"
-			}
-			"06"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"knockback_min"					"50"
-			}
-			"07"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"knockback_max"					"100"
-			}
-			"08"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"range_tooltip"					"900 1000 1100 1200"
-			}
-			"09"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"projectile_speed"				"1150"
-			}
-		}
-	}
-	
+		
 	"spurt"
 	{
 		// General
@@ -822,15 +740,15 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 
-		"AbilityCastRange"				"900 1000 1100 1200"
+		"AbilityCastRange"				"600 800 1000 1200"
 		"AbilityCastPoint"				"0.25"
-		"AbilityCooldown"				"10"
-		"AbilityManaCost"				"100 120 140 160"
+		"AbilityCooldown"				"10 8 6 4"
+		"AbilityManaCost"				"130 160 190 220"
 
 		"precache"
 		{
 			"soundfile"	""
-			"particle"	"particles/spurt_trail.vpcf"
+			"particle"	"particles/spurt_tracker.vpcf"
 		}		
 
 		"AbilitySpecial"
@@ -838,7 +756,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"agi_damage"					"2.5"
+				"damage"						"100 160 220 280"
 			}
 			"02"
 			{
@@ -848,12 +766,12 @@
 			"03"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"range_tooltip"					"900 1000 1100 1200"
+				"range_tooltip"					"600 800 1000 1200"
 			}
 			"04"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"projectile_speed"					"1150"
+				"projectile_speed"				"1150"
 			}
 		}
 	}
@@ -871,7 +789,7 @@
 
 		"precache"
 		{
-			"soundfile"	""
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"
 			"particle"	"particles/water_buff5.vpcf"
 		}
 
@@ -890,12 +808,12 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"hp_regen"			"4 8 12 16"
+				"hp_regen"			"5 10 15 20"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"mana_regen"		"4 8 12 16"
+				"mana_regen"		"5 10 15 20"
 			}
 			"05"
 			{
@@ -905,7 +823,7 @@
 			"06"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_range"		"200 300 400 500"
+				"bonus_range"		"300 350 400 450"
 			}
 		}
 	}
@@ -934,6 +852,11 @@
 				"damage"			"50 125 200"
 			}
 			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"vision"			"800 1200 1600"
+			}
+			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"speed"				"15 30 45"

@@ -48,6 +48,9 @@
 	m_Initializers = 
 	[
 		{
+			_class = "C_INIT_RingWave"
+		},
+		{
 			_class = "C_INIT_RandomLifeTime"
 			m_fLifetimeMin = 0.2
 			m_fLifetimeMax = 0.4
@@ -91,13 +94,26 @@
 			m_ColorMax = [ 91, 112, 148, 255 ]
 			m_ColorMin = [ 183, 208, 226, 255 ]
 		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin = [ 0.0, 0.0, -150.0 ]
+			m_OffsetMax = [ 0.0, 0.0, -100.0 ]
+		},
 	]
 	m_Emitters = 
 	[
 		{
 			_class = "C_OP_ContinuousEmitter"
 			m_flEmitRate = 800.0
-			m_flEmissionDuration = 0.245
+			m_flEmissionDuration = -1.0
+		},
+	]
+	m_ForceGenerators = 
+	[
+		{
+			_class = "C_OP_AttractToControlPoint"
+			m_fFalloffPower = 0.0
+			m_bDisableOperator = true
 		},
 	]
 }

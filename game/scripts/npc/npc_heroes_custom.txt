@@ -181,7 +181,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityLayout"				"4"
 		"Ability1"					"morphling_waveform"					
-		"Ability2"					"morphling_adaptive_strike"				
+		"Ability2"					"spurt"				
 		"Ability3"					"water_fiend"
 		"Ability4"					"lantern"
 		"Ability5"					"attribute_bonus"					
@@ -198,8 +198,8 @@
 		// Attack
 		//-------------------------------------------------------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"17"									// Damage range min.
-		"AttackDamageMax"			"23"									// Damage range max.
+		"AttackDamageMin"			"10"									// Damage range min.
+		"AttackDamageMax"			"20"									// Damage range max.
 		"AttackRate"				"1.6"									// Speed of attack.
 		"AttackAnimationPoint"		"0.5"									// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"									// Range within a target can be acquired.
@@ -210,7 +210,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
 		"AttributeBaseStrength"		"23"									// Base strength
-		"AttributeStrengthGain"		"2.0"									// Strength bonus per level.
+		"AttributeStrengthGain"		"1.7"									// Strength bonus per level.
 		"AttributeBaseIntelligence"	"20"									// Base intelligence
 		"AttributeIntelligenceGain"	"1.5"									// Intelligence bonus per level.
 		"AttributeBaseAgility"		"20"									// Base agility
@@ -235,9 +235,9 @@
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"Ability1"				""				// Ability 1
-		"Ability2"				""				// Ability 2
+		"Ability2"				"go_home"				// Ability 2
 		"Ability3"				"true_sight"			// Ability 3
-		"Ability4"				"go_home"				// Ability 4
+		"Ability4"				"rainbow_swirl"				// Ability 4
 
 		// Armor
 		//-------------------------------------------------------------------------------------------------------------
