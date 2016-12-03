@@ -43,6 +43,8 @@ function item_nuke:OnSpellStart()
 		ParticleManager:SetParticleControl(nuke_particle, 0, vPoint)
 	hCaster:EmitSound("Hero_Techies.Suicide")
 	
+	GridNav:DestroyTreesAroundPoint(vPoint, self:GetSpecialValueFor("radius"), true)
+	
 	near_targets = FindUnitsInRadius(hCaster:GetTeamNumber(), vPoint, nil, self:GetSpecialValueFor("radius")/2, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP, 0, 0, false)
 	
 	for _,v in pairs(near_targets) do

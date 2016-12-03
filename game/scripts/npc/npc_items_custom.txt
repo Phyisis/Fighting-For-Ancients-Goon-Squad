@@ -45,17 +45,17 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_str"				"25"
+				"bonus_str"				"50"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agi"				"25"
+				"bonus_agi"				"50"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_int"				"25"
+				"bonus_int"				"50"
 			}
 			"08"
 			{
@@ -129,17 +129,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_str"				"25"
+				"bonus_str"				"40"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agi"				"25"
+				"bonus_agi"				"40"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_int"				"25"
+				"bonus_int"				"40"
 			}
 		}
 

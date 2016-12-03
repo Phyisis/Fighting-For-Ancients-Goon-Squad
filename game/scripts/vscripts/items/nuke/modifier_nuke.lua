@@ -15,15 +15,15 @@ function modifier_nuke:IsHidden()
 end
 
 function modifier_nuke:GetModifierBonusStats_Strength()
-	return 25
+	return 50
 end
 
 function modifier_nuke:GetModifierBonusStats_Agility()
-	return 25
+	return 50
 end
 
 function modifier_nuke:GetModifierBonusStats_Intellect()
-	return 25
+	return 50
 end
 
 function modifier_nuke:	GetModifierPreAttack_BonusDamage()

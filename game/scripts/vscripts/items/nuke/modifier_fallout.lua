@@ -4,5 +4,5 @@ function modifier_fallout:OnCreated()
 end
 
 function modifier_fallout:GetTexture()
-	return "ernest_swap_str"
+	return "item_nuke"
 end

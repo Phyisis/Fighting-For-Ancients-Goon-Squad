@@ -789,7 +789,7 @@
 
 		"precache"
 		{
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
 			"particle"	"particles/water_buff5.vpcf"
 		}
 
