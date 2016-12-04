@@ -69,9 +69,15 @@
 			m_fRadiusMin = -50.0
 		},
 		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin = [ 0.0, 0.0, 400.0 ]
+			m_OffsetMax = [ 0.0, 0.0, 400.0 ]
+		},
+		{
 			_class = "C_INIT_PositionPlaceOnGround"
 			m_flOffset = 3.0
 			m_CollisionGroupName = "DEBRIS"
+			m_flMaxTraceLength = 1000.0
 		},
 		{
 			_class = "C_INIT_RandomColor"
