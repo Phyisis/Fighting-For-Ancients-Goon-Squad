@@ -59,7 +59,6 @@
 			m_flStartTime_max = 0.5
 			m_RateMax = [ 1.0, 1.0, 0.0 ]
 			m_RateMin = [ -1.0, -1.0, 0.0 ]
-			m_bDisableOperator = true
 		},
 		{
 			_class = "C_OP_ColorInterpolate"
@@ -122,6 +121,7 @@
 			m_ColorMin = [ 229, 255, 0, 100 ]
 			m_ColorMax = [ 0, 255, 182, 100 ]
 			m_nTintBlendMode = "PARTICLEBLEND_OVERLAY"
+			m_bDisableOperator = true
 		},
 	]
 	m_Emitters = 
@@ -129,6 +129,12 @@
 		{
 			_class = "C_OP_ContinuousEmitter"
 			m_flEmitRate = 65.0
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/rainbow_spiral.vpcf"
 		},
 	]
 }

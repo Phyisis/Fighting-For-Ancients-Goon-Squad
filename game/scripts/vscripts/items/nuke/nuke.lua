@@ -111,34 +111,57 @@ function item_nuke:OnProjectileHit( hTarget, vLocation )
 	
 	GridNav:DestroyTreesAroundPoint(vPoint, self:GetSpecialValueFor("radius"), true)
 	
-	near_targets = FindUnitsInRadius(hCaster:GetTeamNumber(), vPoint, nil, self:GetSpecialValueFor("radius")/2, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, 0, false)
+	near_targets = FindUnitsInRadius(hCaster:GetTeamNumber(), vPoint, nil, self:GetSpecialValueFor("radius")*(1/3), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, 0, false)
 	
 	for _,v in pairs(near_targets) do
 		local damageTable = {
 			victim = v,
 			attacker = hCaster,
-			damage = self:GetSpecialValueFor("damage"),
+			damage = self:GetSpecialValueFor("damage_pure"),
 			damage_type = DAMAGE_TYPE_PURE,
 		}
 		ApplyDamage(damageTable)
 	end
-
+	
 	Timers:CreateTimer(0.1, function()
-		far_targets = FindUnitsInRadius(hCaster:GetTeamNumber(), vPoint, nil, self:GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, 0, false)
+		mid_targets = FindUnitsInRadius(hCaster:GetTeamNumber(), vPoint, nil, self:GetSpecialValueFor("radius")*(2/3), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, 0, false)
 		
-		for _,v in pairs(far_targets) do
+		for _,v in pairs(mid_targets) do
 			local damageTable = {
 				victim = v,
 				attacker = hCaster,
-				damage = self:GetSpecialValueFor("damage"),
-				damage_type = DAMAGE_TYPE_PURE,
+				damage = self:GetSpecialValueFor("damage_physical"),
+				damage_type = DAMAGE_TYPE_PHYSICAL,
 			}
 			ApplyDamage(damageTable)
 		end	
 	end)
 	
-	
 	Timers:CreateTimer(0.2, function()
+		far_targets = FindUnitsInRadius(hCaster:GetTeamNumber(), vPoint, nil, self:GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP, 0, 0, false)
+		
+		for _,v in pairs(far_targets) do
+			local damageTable = {
+				victim = v,
+				attacker = hCaster,
+				damage = self:GetSpecialValueFor("damage_magical"),
+				damage_type = DAMAGE_TYPE_MAGICAL,
+			}
+			ApplyDamage(damageTable)
+		end	
+	end)
+	
+	Timers:CreateTimer(duration + 0.2, function()
+		local all_heroes = HeroList:GetAllHeroes()
+		
+		for _,v in pairs(all_heroes) do
+			v:RemoveModifierByName("modifier_fallout")
+		end
+		
+		--ParticleManager:DestroyParticle(EffectName, false)
+	end)
+	
+	Timers:CreateTimer(0.3, function()
 			
 		local targets = FindUnitsInRadius(hCaster:GetTeamNumber(), vPoint, nil, self:GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP, 0, 0, false)
 		
@@ -178,13 +201,5 @@ function item_nuke:OnProjectileHit( hTarget, vLocation )
 		end
 	end)
 		
-	Timers:CreateTimer(duration + 0.2, function()
-		local all_heroes = HeroList:GetAllHeroes()
-		
-		for _,v in pairs(all_heroes) do
-			v:RemoveModifierByName("modifier_fallout")
-		end
-		
-		--ParticleManager:DestroyParticle(EffectName, false)
-	end)
+	
 end

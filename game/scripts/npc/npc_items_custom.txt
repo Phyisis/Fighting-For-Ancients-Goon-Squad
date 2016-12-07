@@ -10,7 +10,7 @@
         // Casting--------------------------------------------
         "AbilityCastRange"              "0" 
         "AbilityCastPoint"              "0.3" 
-        "AbilityCooldown"               "10.0"
+        "AbilityCooldown"               "30.0"
         "AbilityManaCost"               "1000"
 		
 		"precache"
@@ -33,39 +33,54 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"600"
+				"damage_pure"			"200"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fallout_dps"			"3"
+				"var_type"				"FIELD_INTEGER"
+				"damage_physical"		"400"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"fallout_duration"		"60"
+				"damage_magical"		"600"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_str"				"50"
+				"damage_tooltip"		"1200"
 			}
 			"06"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_agi"				"50"
+				"var_type"				"FIELD_FLOAT"
+				"fallout_dps"			"3"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_int"				"50"
+				"fallout_duration"		"60"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"60"
+				"bonus_str"				"50"
 			}
 			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agi"				"50"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_int"				"50"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"60"
+			}
+			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"projectile_speed"		"1600"

@@ -864,4 +864,91 @@
 		}
 	}
 	
+	//=================================================================================================================
+	// GIZMO
+	//=================================================================================================================
+	
+	"moonwalk"
+	{
+		"BaseClass"				"ability_lua"
+		"ScriptFile"			"heroes/gizmo/moonwalk.lua"
+		"AbilityTextureName" 	"moonwalk"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"			"5 6 7 8"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"velocity"				"15 20 25 30"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"turn_rate"			"-50 -60 -70 -80"
+			}
+		}
+	}
+	
+	"go_home"
+	{
+		"BaseClass"				"ability_lua"
+		"ScriptFile"			"heroes/gizmo/go_home.lua"
+		"AbilityTextureName" 	"go_home"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	}
+	
+	"true_sight"
+	{
+		"BaseClass"				"ability_lua"
+		"ScriptFile"			"heroes/gizmo/true_sight.lua"
+		"AbilityTextureName" 	"true_sight"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	}
+
+	"rainbow_swirl"
+	{
+		"BaseClass"				"ability_lua"
+		"ScriptFile"			"heroes/gizmo/rainbow_swirl.lua"
+		"AbilityTextureName" 	"rainbow_swirl"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"			"DOTA_ABILITY_TYPE_ULTIMATE"
+		
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"120 90 60"
+		"AbilityManaCost"				"200 300 400"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"10 20 30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"600 800 1000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cooldown_reduction"	"50 60 70"
+			}
+		}
+	}
+	
 }
