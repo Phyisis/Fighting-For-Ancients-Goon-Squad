@@ -9,7 +9,7 @@ function rainbow_wave:OnSpellStart()
 	self.wave_distance = self:GetSpecialValueFor( "wave_distance" )
 	self.wave_damage = self:GetSpecialValueFor( "wave_damage" ) 
 
-	EmitSoundOn( "Hero_Lina.DragonSlave.Cast", self:GetCaster() )
+	EmitSoundOn( "Hero_Magnataur.ShockWave.Cast.Anvil", self:GetCaster() )
 	local wave_particle = ParticleManager:CreateParticle("particles/rainbow_wave.vpcf", PATTACH_ABSORIGIN, self:GetCaster())
 		ParticleManager:SetParticleControl( wave_particle, 0, self:GetCaster():GetAbsOrigin():__add(Vector(0,0,200)) )
 
@@ -45,7 +45,7 @@ function rainbow_wave:OnSpellStart()
 	}
 
 	ProjectileManager:CreateLinearProjectile( info )
-	EmitSoundOn( "Hero_Lina.DragonSlave", self:GetCaster() )
+	EmitSoundOn( "Hero_Magnataur.ShockWave.Cast.Anvil", self:GetCaster() )
 end
 
 --------------------------------------------------------------------------------

@@ -236,7 +236,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"Ability1"				"moonwalk"					// Ability 1
 		"Ability2"				"rainbow_wave"				// Ability 2
-		"Ability3"				"gay_bar"					// Ability 3
+		"Ability3"				"mana_aura"					// Ability 3
 		"Ability4"				"rainbow_swirl"				// Ability 4
 
 		// Armor
