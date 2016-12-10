@@ -384,7 +384,7 @@
 		"AbilityCastRange"              "800"
 		"AbilityCastPoint"				"0.3"
 		"AbilityCooldown"				"20.0"
-		"AbilityManaCost"				"100 150 200 250 300 350 400"
+		"AbilityManaCost"				"140 150 160 170 180 190 200"
 		
 		"precache"
 		{
@@ -406,7 +406,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"50 60 70 80 90 100 110"
+				"damage"				"95 100 105 110 115 120 125"
 			}			
 		}		
 	}
@@ -879,10 +879,6 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityCastRange"				"1200"
-		"AbilityCastPoint"				"0.3"
-		"AbilityCooldown"				"14 12 10 8"
-		"AbilityManaCost"				"100 110 120 130"
 		
 		"AbilitySpecial"
 		{
@@ -894,113 +890,32 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"velocity"			"10 14 18 22"
+				"velocity"				"15 20 25 30"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"turn_rate"			"-60 -70 -80 -90"
+				"turn_rate"			"-50 -60 -70 -80"
 			}
 		}
 	}
 	
-	"rainbow_wave"
+	"go_home"
 	{
 		"BaseClass"				"ability_lua"
-		"ScriptFile"			"heroes/gizmo/rainbow_wave.lua"
-		"AbilityTextureName" 	"rainbow_wave"
+		"ScriptFile"			"heroes/gizmo/go_home.lua"
+		"AbilityTextureName" 	"go_home"
 
 		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-
-		"AbilityCastPoint"				"0.1"
-		"AbilityCooldown"				"14 12 10 8"
-		"AbilityManaCost"				"140 160 180 200"
-		"AbilityCastRange"				"1300"
-
-		"precache"
-		{
-			"particle"		"particles/rainbow_wave.vpcf"
-		}
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"wave_speed"			"900"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"wave_width_initial"	"50"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"wave_width_end"		"700"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"wave_distance"			"800"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"wave_damage"			"100 175 250 325"
-			}
-		}
 	}
 	
-	"gay_bar"
+	"true_sight"
 	{
 		"BaseClass"				"ability_lua"
-		"ScriptFile"			"heroes/gizmo/gay_bar.lua"
-		"AbilityTextureName" 	"gay_bar"
+		"ScriptFile"			"heroes/gizmo/true_sight.lua"
+		"AbilityTextureName" 	"true_sight"
 
-		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"15.0 15.0 15.0 15.0"
-		"AbilityManaCost"				"70 80 90 100"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"illusion_duration"			"10.0"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"outgoing_damage"			"-90"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"outgoing_damage_tooltip"	"10"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"incoming_damage"			"-50 -60 -70 -80"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"tooltip_incoming_damage_total_pct"			"50 40 30 20"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"images_count"				"4"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"invuln_duration"			"0.3"
-			}			
-		}
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	}
 
 	"rainbow_swirl"
@@ -1015,11 +930,6 @@
 		"AbilityCastPoint"				"0.3"
 		"AbilityCooldown"				"120 90 60"
 		"AbilityManaCost"				"200 300 400"
-
-		"precache"
-		{
-			"particle"		"particles/rainbow_ribbon.vpcf"
-		}
 
 		"AbilitySpecial"
 		{

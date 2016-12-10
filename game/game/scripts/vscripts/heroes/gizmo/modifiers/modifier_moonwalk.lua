@@ -9,15 +9,6 @@ function modifier_moonwalk:DeclareFunctions()
     return funcs
 end
 
---[[
-function modifier_moonwalk:CheckState()
-	state = {
-	[MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = true
-	}
-	return state
-end
-]]
-
 function modifier_moonwalk:GetModifierTurnRate_Percentage()
 	return self:GetAbility():GetSpecialValueFor("turn_rate")
 end

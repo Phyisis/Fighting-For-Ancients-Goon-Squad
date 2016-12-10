@@ -1,0 +1,199 @@
+"DOTAAbilities"
+{
+	"item_nuke"
+	{
+		"ID"                            "1250"
+        "BaseClass"                     "item_lua"
+		"AbilityTextureName"            "item_nuke"
+		"ScriptFile"                    "items/nuke/nuke.lua"
+		
+        // Casting--------------------------------------------
+        "AbilityCastRange"              "0" 
+        "AbilityCastPoint"              "0.3" 
+        "AbilityCooldown"               "30.0"
+        "AbilityManaCost"               "1000"
+		
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_tinker.vsndevts"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_pugna.vsndevts"
+			"particle"		"particles/nuke/mini_nuke.vpcf"
+			"particle"		"particles/nuke/mini_nuke_fallout1.vpcf"
+			"particle"		"particles/nuke/nuke.vpcf"
+		}
+		
+		"AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "radius"             	"1000"
+            }
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_pure"			"200"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_physical"		"400"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_magical"		"600"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_tooltip"		"1200"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fallout_dps"			"3"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"fallout_duration"		"60"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_str"				"50"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agi"				"50"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_int"				"50"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"60"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"projectile_speed"		"1600"
+			}
+		}
+		
+		//// Item Info
+        ////-------------------------------------------------------------------------------------------------------------
+        //"ItemCost"                      "15000"
+        "ItemShopTags"                  "nuke"
+        "ItemAliases"                   "Nuke"
+		"ItemQuality"					"artifact"
+        //
+	}
+        
+	"item_recipe_nuke"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "item_datadriven"
+		"ID"                            "1251"			
+		"Model"							"models/props_gameplay/recipe.mdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"                      "0"   
+		"ItemShopTags"                  "recipe;nuke"
+		"ItemPurchasable" 				"1"
+
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"                    "1"
+		"ItemResult"                    "item_nuke"
+		"ItemRequirements"
+		{
+			"01"                        "item_mcguffin;item_relic;item_blink"
+		}
+	}
+	
+	"item_mcguffin" 
+	{
+		"ID"           			"1260"
+		"BaseClass"    			"item_datadriven"
+		"AbilityTextureName" 	"item_mcguffin"
+		"Model"        			"models/props_gameplay/recipe.vmdl" 
+		"Effect"       			"particles/generic_gameplay/dropped_item.vpcf"
+		"ItemQuality"  			"artifact"		
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				
+        "ItemShopTags"          "stats;mcguffin"
+        "ItemAliases"           "McGuffin"
+
+		//"ItemCost"     		"322"
+		"ItemKillable" 			"0" 
+		"ItemSellable"			"1"
+		"ItemPurchasable" 		"1"
+		"ItemDroppable" 		"1"
+		"ItemShareability" 		"ITEM_NOT_SHAREABLE"
+
+		"SideShop"     			"0" 
+		"SecretShop"   			"0"
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"1"
+		"ItemDisassembleRule" 	"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_str"				"40"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agi"				"40"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_int"				"40"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_custom"
+			{
+				"Passive"  		"1"
+				"IsHidden" 		"1" 
+				"Attributes" 	"MODIFIER_ATTRIBUTE_MULTIPLE"
+			   "Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "%bonus_str"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "%bonus_agi"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "%bonus_int"
+				}
+			} 
+		}
+	} 
+	
+	"item_recipe_mcguffin" 
+	{
+		"ID" "1261"
+		"BaseClass"           "item_datadriven"
+		"ItemRecipe"          "1" //destroyed after combine
+		"ItemCost"            "0" //if its 0, it will combine without needing a recipe.
+		"ItemResult"          "item_mcguffin" //the result of combining the ItemRequirements
+		"ItemRequirements"
+		{
+			"01" 				"item_mystic_staff;item_reaver;item_eagle"
+		}
+	}
+	
+}

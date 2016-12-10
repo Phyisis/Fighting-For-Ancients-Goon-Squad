@@ -234,9 +234,9 @@
 
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
-		"Ability1"				"moonwalk"					// Ability 1
-		"Ability2"				"rainbow_wave"				// Ability 2
-		"Ability3"				"gay_bar"					// Ability 3
+		"Ability1"				"moonwalk"				// Ability 1
+		"Ability2"				"go_home"				// Ability 2
+		"Ability3"				"true_sight"			// Ability 3
 		"Ability4"				"rainbow_swirl"				// Ability 4
 
 		// Armor
@@ -252,6 +252,7 @@
 		"AttackAnimationPoint"		"0.3"									// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"									// Range within a target can be acquired.
 		"AttackRange"				"550"									// Range within a target can be attacked.
+		"ProjectileModel"			"dazzle_base_attack"						// Particle system model for projectile.
 		"ProjectileSpeed"			"1200"									// Speed of projectile.
 
 		// Attributes
@@ -267,6 +268,6 @@
 		// Movement
 		//-------------------------------------------------------------------------------------------------------------
 		"MovementSpeed"				"305"									// Speed.
-		"MovementTurnRate"			"1.0"									// Turning rate.
+		"MovementTurnRate"			"0.6"									// Turning rate.
 	}
 }
