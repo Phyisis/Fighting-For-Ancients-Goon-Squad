@@ -840,8 +840,8 @@
 		"precache"
 		{
 			"soundfile"		""
-			"particle"		"particles/lantern.vpcf"
-			"particle"		"particles/lantern_zap.vpcf"
+			"particle"		"particles/lantern_base.vpcf"
+			"particle"		"particles/lantern_zap_base.vpcf"
 		}
 
 		"AbilitySpecial"
@@ -1008,6 +1008,7 @@
 
 		"precache"
 		{
+			"soundfile"		"soundevents/rainbow_siren.vsndevts"
 			"particle"		"particles/rainbow_ribbon.vpcf"
 		}
 
@@ -1035,7 +1036,7 @@
 	// DRACKOS
 	//==========================================================================================================================================================
 	
-	"spirits"
+	"spirits" //left
 	{
 		"BaseClass"				"ability_lua"
 		"ScriptFile"			"heroes/drackos/spirits.lua"
@@ -1048,6 +1049,12 @@
 		"AbilityCooldown"				"6"
 		"AbilityManaCost"				"140 160 180 200"
 
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_bane.vsndevts"
+			"particle"		"particles/spirit_projectile.vpcf"
+		}
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -1078,12 +1085,12 @@
 			"06"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"			"100"
+				"radius"			"200"
 			}
 		}
 	}
 
-	"spirits2"
+	"spirits2" //right
 	{
 		"BaseClass"				"ability_lua"
 		"ScriptFile"			"heroes/drackos/spirits2.lua"
@@ -1096,6 +1103,12 @@
 		"AbilityCooldown"				"6"
 		"AbilityManaCost"				"140 160 180 200"
 
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_bane.vsndevts"
+			"particle"		"particles/spirit_projectile.vpcf"
+		}
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -1126,12 +1139,12 @@
 			"06"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"			"100"
+				"radius"			"200"
 			}
 		}
 	}
 
-	"spirits3"
+	"spirits3" //center
 	{
 		"BaseClass"				"ability_lua"
 		"ScriptFile"			"heroes/drackos/spirits3.lua"
@@ -1143,6 +1156,12 @@
 		"AbilityCastRange"              "3000"
 		"AbilityCooldown"				"6"
 		"AbilityManaCost"				"140 160 180 200"
+
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_bane.vsndevts"
+			"particle"		"particles/spirit_projectile.vpcf"
+		}
 
 		"AbilitySpecial"
 		{
@@ -1174,7 +1193,7 @@
 			"06"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"			"100"
+				"radius"			"200"
 			}
 		}
 	}

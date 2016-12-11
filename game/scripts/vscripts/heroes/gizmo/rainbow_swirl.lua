@@ -7,6 +7,8 @@ function rainbow_swirl:OnSpellStart()
 	duration = self:GetSpecialValueFor("duration")
 	radius = self:GetSpecialValueFor("radius")
 	num = 0
+
+	caster:EmitSound("rainbow_siren")
 	
 	local nFXIndex = ParticleManager:CreateParticle( "particles/rainbow_ribbon.vpcf", PATTACH_OVERHEAD_FOLLOW, self:GetCaster() )
 		ParticleManager:SetParticleControl( nFXIndex, 0, caster:GetAbsOrigin() )

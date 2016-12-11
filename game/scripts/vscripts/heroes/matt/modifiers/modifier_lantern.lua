@@ -4,7 +4,7 @@ LinkLuaModifier("generic_thinker", "shared_modifiers/generic_thinker.lua", LUA_M
 
 function modifier_lantern:OnCreated()
 	if IsServer() then
-		self:StartIntervalThink(0.04)
+		self:StartIntervalThink(0.03)
 		--print("created")
 	end
 end
@@ -48,8 +48,6 @@ function modifier_lantern:OnIntervalThink()
 				--print(angle)
 				target_pos = caster_pos:__add( 200*angle )
 				
-				local thinker = CreateModifierThinker(caster, self:GetAbility(), "generic_thinker", {["duration"] = 0.35}, target_pos, caster:GetTeamNumber(), false)
-				
 				if caster:HasModifier("modifier_water_fiend") then 
 					AddFOWViewer(caster:GetTeamNumber(), target_pos, self:GetAbility():GetSpecialValueFor("vision"), 0.5, false)				
 								
@@ -65,17 +63,16 @@ function modifier_lantern:OnIntervalThink()
 						}
 						ApplyDamage(damageTable)
 					end
-					if victims[1] ~= nil then 
-						local zap_particle = ParticleManager:CreateParticle("particles/lantern_zap.vpcf", PATTACH_ABSORIGIN, thinker)	
-							ParticleManager:SetParticleControl(zap_particle, 0, thinker:GetAbsOrigin():__add(Vector(0,0,100)))
+					if victims[1] ~= nil then
+						local zap_particle = ParticleManager:CreateParticle("particles/lantern_zap_base.vpcf", PATTACH_ABSORIGIN, caster)	
+							ParticleManager:SetParticleControl(zap_particle, 0, target_pos:__add(Vector(0,0,100)))
 							ParticleManager:SetParticleControl(zap_particle, 1, Vector(red, green, blue) )
 					end
 				end				
 								
-				local lantern_particle = ParticleManager:CreateParticle("particles/lantern.vpcf", PATTACH_ABSORIGIN, thinker)	
-					ParticleManager:SetParticleControl(lantern_particle, 0, thinker:GetAbsOrigin():__add(Vector(0,0,100)))
-					ParticleManager:SetParticleControl(lantern_particle, 1, Vector(red,green,blue) )
-								
+				local lantern_particle = ParticleManager:CreateParticle("particles/lantern_base.vpcf", PATTACH_ABSORIGIN, caster)	
+					ParticleManager:SetParticleControl(lantern_particle, 0, target_pos:__add(Vector(0,0,100)))
+					ParticleManager:SetParticleControl(lantern_particle, 1, Vector(red,green,blue) )		
 			end
 		end
 	end

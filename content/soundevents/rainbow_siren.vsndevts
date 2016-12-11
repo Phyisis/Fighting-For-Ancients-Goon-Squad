@@ -1,4 +1,4 @@
-"bubbles"
+"rainbow_siren"
 {
     "operator_stacks"
     {
@@ -14,10 +14,10 @@
                     {
                         "value"
                         {
-                              "value0"        "sounds/bubbles.vsnd"
+                              "value0"        "sounds/rainbow_siren.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "0.50000"  }
+                    "volume"            {   "value"     "1.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }

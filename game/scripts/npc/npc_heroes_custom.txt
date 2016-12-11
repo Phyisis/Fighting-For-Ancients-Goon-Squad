@@ -130,13 +130,14 @@
 
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityLayout"				"5"
+		"AbilityLayout"				"6"
 		"Ability1"					"spirits"				// Ability 1
 		"Ability2"					"spirits3"				// Ability 2
 		"Ability3"					"spirits2"				// Ability 3
-		"Ability4"					""						// Ability 4
+		"Ability4"					"streak_killer"			// Ability 4
 		"Ability5"					""						// Ability 5
-		"Ability6"					"attribute_bonus"		// Ability 6
+		"Ability6"					""						// Ability 6		
+		"Ability7"					"attribute_bonus"		// Ability 7
 
 		// Armor
 		//-------------------------------------------------------------------------------------------------------------
