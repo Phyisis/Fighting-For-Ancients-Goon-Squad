@@ -1,7 +1,7 @@
 ernest_str1 = class({})
 
 LinkLuaModifier("modifier_ernest_str1", "heroes/invoker/modifiers/modifier_ernest_str1.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("generic_thinker", "heroes/invoker/modifiers/generic_thinker.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("generic_thinker", "shared_modifiers/generic_thinker.lua", LUA_MODIFIER_MOTION_NONE)
 
 function ernest_str1:OnSpellStart()
 	caster = self:GetCaster()

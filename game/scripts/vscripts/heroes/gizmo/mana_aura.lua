@@ -8,6 +8,8 @@ function mana_aura:OnSpellStart()
 	radius = self:GetSpecialValueFor("radius")
 	num = 0
 
+	caster:EmitSound("bubbles")
+
 	local nFXIndex = ParticleManager:CreateParticle( "particles/mana_source.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster )
 		ParticleManager:SetParticleControl( nFXIndex, 0, caster:GetAbsOrigin() )
 
