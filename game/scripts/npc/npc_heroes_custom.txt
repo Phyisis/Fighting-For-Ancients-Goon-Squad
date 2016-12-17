@@ -18,11 +18,20 @@
 		"AttributeIntelligenceGain"	"1.5"	
 		"AttributeBaseAgility"		"20"	
 		"AttributeAgilityGain"		"2.5"
+		"AbilityLayout"				"4"
 
 		"Ability1"					"gaggle_of_jews"
 		"Ability2"					"jew_claw"
 		"Ability3"					"misanthrope"
 		"Ability4"					"wallet_drain"
+		"Ability10"					"special_bonus_strength_15"
+		"Ability11"					"special_bonus_gold_income_10"
+		"Ability12"					"special_bonus_all_stats_8"
+		"Ability13"					"special_bonus_gold_income_30"
+		"Ability14"					"special_bonus_evasion_15"
+		"Ability15"					"special_bonus_gold_income_50"
+		"Ability16"					"special_bonus_attack_speed_100"
+		"Ability17"					"special_bonus_gold_income_5"
 	}
 	
 	
@@ -47,6 +56,14 @@
 		"Ability8"					"ernest_str2"
 		"Ability9"					"ernest_str3"
 		"Ability10"					"ernest_swap"
+		"Ability17"					"special_bonus_attack_damage_15"
+		"Ability18"					"special_bonus_hp_125"
+		"Ability19"					"special_bonus_spell_lifesteal_20"
+		"Ability20"					"special_bonus_exp_boost_20"
+		"Ability21"					"special_bonus_all_stats_7"
+		"Ability22"					"special_bonus_attack_speed_35"
+		"Ability23"					"special_bonus_cooldown_reduction_25"
+		"Ability24"					"special_bonus_spell_amplify_25"
 		
 		
 
@@ -98,7 +115,15 @@
 		"Ability2"					"skywrath_mage_concussive_shot"
 		"Ability3"					"spritely_speed"
 		"Ability4"					"blink_tree"
-		
+		"Ability10"					"special_bonus_hp_125"
+		"Ability11"					"special_bonus_intelligence_7"
+		"Ability12"					"special_bonus_attack_damage_50"
+		"Ability13"					"special_bonus_gold_income_10"
+		"Ability14"					"special_bonus_movement_speed_20"
+		"Ability15"					"special_bonus_magic_resistance_15"
+		"Ability16"					"special_bonus_mp_regen_14"
+		"Ability17"					"special_bonus_attack_range_400"
+
 		"ArmorPhysical"				"0"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"			"40"
@@ -135,9 +160,16 @@
 		"Ability2"					"spirits3"				// Ability 2
 		"Ability3"					"spirits2"				// Ability 3
 		"Ability4"					"streak_killer"			// Ability 4
-		"Ability5"					""						// Ability 5
-		"Ability6"					""						// Ability 6		
-		"Ability7"					"attribute_bonus"		// Ability 7
+		"Ability5"					"wandering_souls"		// Ability 5
+		"Ability6"					"soul_release"			// Ability 6
+		"Ability10"					"special_bonus_attack_damage_20"
+		"Ability11"					"special_bonus_armor_5"
+		"Ability12"					"special_bonus_all_stats_6"
+		"Ability13"					"special_bonus_movement_speed_15"
+		"Ability14"					"special_bonus_attack_speed_25"
+		"Ability15"					"special_bonus_strength_12"
+		"Ability16"					"special_bonus_hp_400"
+		"Ability17"					"special_bonus_cooldown_reduction_25"
 
 		// Armor
 		//-------------------------------------------------------------------------------------------------------------
@@ -185,12 +217,19 @@
 		"Ability2"					"spurt"				
 		"Ability3"					"water_fiend"
 		"Ability4"					"lantern"
-		"Ability5"					"attribute_bonus"					
+		"Ability5"					""					
 		"Ability6"					""
 		"Ability7"					""
 		"Ability8"					""
 		"Ability9"					""
-		"Ability10"					""
+		"Ability10"					"special_bonus_agility_8"
+		"Ability11"					"special_bonus_mp_200"
+		"Ability12"					"special_bonus_attack_speed_25"
+		"Ability13"					"special_bonus_cooldown_reduction_12"
+		"Ability14"					"special_bonus_movement_speed_25"
+		"Ability15"					"special_bonus_attack_damage_40"
+		"Ability16"					"special_bonus_unique_morphling_1"
+		"Ability17"					"special_bonus_lifesteal_30"
 
 		// Armor
 		//-------------------------------------------------------------------------------------------------------------
@@ -239,6 +278,14 @@
 		"Ability2"				"rainbow_wave"				// Ability 2
 		"Ability3"				"mana_aura"					// Ability 3
 		"Ability4"				"rainbow_swirl"				// Ability 4
+		"Ability10"				"special_bonus_intelligence_10"
+		"Ability11"				"special_bonus_hp_125"
+		"Ability12"				"special_bonus_cast_range_100"
+		"Ability13"				"special_bonus_attack_damage_40"
+		"Ability14"				"special_bonus_movement_speed_25"
+		"Ability15"				"special_bonus_respawn_reduction_30"
+		"Ability16"				"special_bonus_attack_damage_150"
+		"Ability17"				"special_bonus_attack_speed_100"
 
 		// Armor
 		//-------------------------------------------------------------------------------------------------------------

@@ -29,16 +29,17 @@ function modifier_misanthrope:OnDeath(params)
 		caster = self:GetParent()
 		player = PlayerResource:GetPlayer(caster:GetPlayerID())
 		ability = self:GetAbility()
-		distrad = Vector(-9000,-9000,520):__sub(hero:GetAbsOrigin())
-		distdire = Vector(8350,8350,520):__sub(hero:GetAbsOrigin())
-		--print(distrad:Length2D())
-		--print(distdire:Length2D())
-		
+		distrad = Vector(-7326,-6807,520):__sub(hero:GetAbsOrigin())
+		distdire = Vector(7203,6621,520):__sub(hero:GetAbsOrigin())
+		print(distrad:Length2D())
+		print(distdire:Length2D())
+		print(caster:GetAbsOrigin())
+
 		killer_index = caster:entindex()
 		killed_by = params.attacker
 
 		if params.attacker == hero and params.attacker:GetTeam() ~= params.unit:GetTeam() and not params.unit:IsIllusion() and not params.unit:IsHero() then
-			gold_multiplier = self:GetAbility():GetSpecialValueFor("gold_multiplier")
+			gold_multiplier = ability:GetSpecialValueFor("gold_multiplier")
 			
 			if caster:GetTeam() == DOTA_TEAM_GOODGUYS then 
 				x = distrad:Length2D()
@@ -48,18 +49,16 @@ function modifier_misanthrope:OnDeath(params)
 			
 			print(x)
 
-			-- Vector 0000000000174650 [-6755.618164 -6503.004883 512.000000] radiant
-			-- Vector 00000000001BE060 [7034.102051 6459.533203 520.000000] dire
+			-- Radiant Fountain [-6755.618164 -6503.004883 512.000000] [-7326.586914 -6807.351563 512.000000]
+			-- Dire Fountain [7034.102051 6459.533203 520.000000] [  [7203.612793 6621.416504 512.000000]
+			-- Middle [-534.812500 -378.781250 128.000000]
 
-
-			-- ((10 + (skill lvl * 10)) * (arctan((x-12000)/5000)+1)) + 100 
-			bonus = target:GetMaximumGoldBounty() * (((10+(ability:GetLevel())*gold_multiplier)*(math.atan((x-12730)/5000)+1)))/100
+			bonus = (gold_multiplier/100)*target:GetMaximumGoldBounty() * ((math.atan((x-15000)/4000)/1.5)+1)
 			bonus = math.floor(bonus)
 			--bonus = 10
 
 			PlayerResource:ModifyGold(caster:GetPlayerID(), bonus, false, 0)
 			print("bonus: " .. bonus)
-
 
 			-- Show the particles, player only
 			local particleName = "particles/units/heroes/hero_alchemist/alchemist_lasthit_coins.vpcf"		

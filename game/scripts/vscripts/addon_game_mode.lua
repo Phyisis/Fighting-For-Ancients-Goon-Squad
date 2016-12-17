@@ -2,6 +2,7 @@
 
 require('libraries/timers')
 require('libraries/playertables')
+require('locations')
 
 if FAGSDota == nil then
 	FAGSDota = class({})
@@ -58,6 +59,9 @@ function FAGSDota:OnChat(event)
 	end
 	if event.text == 'launch' then
 		self:Launch()
+	end
+	if event.text == 'location' then
+		
 	end
 end
 

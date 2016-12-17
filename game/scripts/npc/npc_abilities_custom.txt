@@ -113,7 +113,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"gold_multiplier"	"10"
+				"gold_multiplier"	"40 60 80 100"
 			}
 		}
 	}
@@ -176,6 +176,25 @@
 			{
 				"var_type"					"FIELD_FLOAT"
 				"tick_interval"				"0.25"
+			}
+		}
+	}
+	"special_bonus_gold_income_5"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"6017"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"500"
 			}
 		}
 	}
@@ -1197,5 +1216,80 @@
 			}
 		}
 	}
+
+	"wandering_souls"
+	{
+		"BaseClass"				"ability_lua"
+		"ScriptFile"			"heroes/drackos/wandering_souls.lua"
+		"AbilityTextureName" 	""
+
+		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"duration"					"120 240 360 480"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"speed"						"300 375 450 525"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"target_lock_radius"		"300"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"lock_duration"				"30 40 50 60"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"souls"						"1 2 3 4"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"vision_radius"				"300"
+			}
+		}
+	}
+
+	//==========================================================================================================================================================
+	// SPECIAL BONUS
+	//==========================================================================================================================================================
+
+	// special_bonus_hp_{100,125,150,175,200,250,275,300,350,400,500}
+	// special_bonus_mp_{100,125,150,175,200,250,300,350,400,500}
+	// special_bonus_attack_speed_{10,15,20,25,30,35,40,45,50,60,80,100}
+	// special_bonus_hp_regen_{4,5,6,7,8,10,14,15,20,25,40,50}
+	// special_bonus_mp_regen_{1,2,,3,4,6,8,10,14}
+	// special_bonus_movement_speed_{10,15,20,25,30,35,40,45,50}
+	// special_bonus_lifesteal_{10,15,20,25,30}
+	// special_bonus_all_stats_{4,5,6,7,8,10,12,14,15,20}
+	// special_bonus_intelligence_{6,7,8,10,12,13,15,20,25,30,35}
+	// special_bonus_spell_lifesteal_{20,70}
+	// special_bonus_strength_{3,4,5,6,7,8,9,10,12,14,15,20,25}
+	// special_bonus_agility_{8,10,13,14,15,16,20,25}
+	// special_bonus_armor_{2,3,4,5,6,7,8,9,10,12,15}
+	// special_bonus_magic_resistance_{5,6,8,10,12,15,20,25,30}
+	// special_bonus_day_vision_400
+	// special_bonus_vision_200
+	// special_bonus_attack_damage_{10,12,15,20,25,30,35,40,45,50,65,75,90,100,120,150}
+	// special_bonus_attack_range_{50,75,100,125,150,175,200,250,300,400}
+	// special_bonus_cast_range_{50,60,75,100,125,150,175,200,250,300}
+	// special_bonus_spell_amplify_{3,4,5,6,8,10,12,15,20,25}
+	// special_bonus_cooldown_reduction_{8,10,12,15,20,25}
+	// special_bonus_respawn_reduction_{15,20,25,30,35,40,50,60}
+	// special_bonus_gold_income_{5,10,15,20,25,30,40,50} 	actual corresponding gold/min = {30,60,90,120,150,180,240,300}
+	// special_bonus_evasion_{10,12,15,20,25}
+	// special_bonus_20_bash_2
+	// special_bonus_exp_boost_{5,10,15,20,25,30}	
+	
 
 }
