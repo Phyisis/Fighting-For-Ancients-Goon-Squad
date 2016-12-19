@@ -118,7 +118,7 @@
 		"Ability10"					"special_bonus_hp_125"
 		"Ability11"					"special_bonus_intelligence_7"
 		"Ability12"					"special_bonus_attack_damage_50"
-		"Ability13"					"special_bonus_gold_income_10"
+		"Ability13"					"special_bonus_gold_income_20"
 		"Ability14"					"special_bonus_movement_speed_20"
 		"Ability15"					"special_bonus_magic_resistance_15"
 		"Ability16"					"special_bonus_mp_regen_14"
@@ -131,7 +131,7 @@
 		"AttackRate"				"1.000000"
 		"AttackAnimationPoint"		"0.400000"
 		"AttackAcquisitionRange"	"800"
-		"AttackRange"				"700"
+		"AttackRange"				"500"
 		"ProjectileModel"			"particles/units/heroes/hero_skywrath_mage/skywrath_mage_base_attack.vpcf"
 		"ProjectileSpeed"			"200"
 		
@@ -142,7 +142,7 @@
 		"AttributeAgilityGain"			"1.000000"
 		"AttributeBaseIntelligence"		"27"
 		"AttributeIntelligenceGain"		"5.00000"
-		"MovementSpeed"					"325"
+		"MovementSpeed"					"290"
 		"MovementTurnRate"				"0.500000"
 	}
 	
@@ -159,17 +159,17 @@
 		"Ability1"					"spirits"				// Ability 1
 		"Ability2"					"spirits3"				// Ability 2
 		"Ability3"					"spirits2"				// Ability 3
-		"Ability4"					"streak_killer"			// Ability 4
+		"Ability4"					"chilling_blade"		// Ability 4
 		"Ability5"					"wandering_souls"		// Ability 5
 		"Ability6"					"soul_release"			// Ability 6
-		"Ability10"					"special_bonus_attack_damage_20"
-		"Ability11"					"special_bonus_armor_5"
+		"Ability10"					"special_bonus_attack_damage_30"
+		"Ability11"					"special_bonus_mp_250"
 		"Ability12"					"special_bonus_all_stats_6"
-		"Ability13"					"special_bonus_movement_speed_15"
-		"Ability14"					"special_bonus_attack_speed_25"
-		"Ability15"					"special_bonus_strength_12"
-		"Ability16"					"special_bonus_hp_400"
-		"Ability17"					"special_bonus_cooldown_reduction_25"
+		"Ability13"					"special_bonus_movement_speed_25"
+		"Ability14"					"special_bonus_mp_regen_10"
+		"Ability15"					"special_bonus_agility_16"
+		"Ability16"					"special_bonus_hp_500"
+		"Ability17"					"special_bonus_intelligence_35"
 
 		// Armor
 		//-------------------------------------------------------------------------------------------------------------
@@ -192,12 +192,12 @@
 		"AttributeStrengthGain"			"2.0"									// Strength bonus per level.
 		"AttributeBaseAgility"			"23"									// Base agility
 		"AttributeAgilityGain"			"2.2"									// Agility bonus per level.
-		"AttributeBaseIntelligence"		"16"									// Base intelligence
-		"AttributeIntelligenceGain"		"1.9"									// Intelligence bonus per level.
+		"AttributeBaseIntelligence"		"18"									// Base intelligence
+		"AttributeIntelligenceGain"		"2.5"									// Intelligence bonus per level.
 
 		// Movement
 		//-------------------------------------------------------------------------------------------------------------
-		"MovementSpeed"				"290"									// Speed.
+		"MovementSpeed"				"300"									// Speed.
 		"MovementTurnRate"			"0.4"									// Turning rate.
 	}
 	

@@ -5,6 +5,7 @@ LinkLuaModifier("generic_thinker", "shared_modifiers/generic_thinker.lua", LUA_M
 
 function spirits2:OnAbilityPhaseStart()
 	self:StartCooldown(self:GetCooldown(self:GetLevel()))
+	self:PayManaCost()
 	hCaster = self:GetCaster()
 	vCaster = self:GetCaster():GetAbsOrigin()
 	vPoint = hCaster:GetCursorPosition()
